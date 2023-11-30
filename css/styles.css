@@ -1,5 +1,4 @@
 /* css/styles.css */
-/* Add your CSS styles here */
 
 *{
 
@@ -16,8 +15,6 @@ header{
     background-color: rgb(19, 40, 66);
     height: 60px;
     
-    /* text-align: center; */
-    /* justify-content: left; */
     color: white;
 }
 body{
@@ -60,23 +57,5 @@ li {
     align-items: left;
     list-style: none;
     width: 100%;
-    /* background:#7ab6ff; */
-/* align-self: left; */
-
-    /* position: fixed; */
-    /* background:#1A74E2; */
-    height: 40px;
-    /* margin-top: 0px; */
-
-
-    /* align-items: center;
-    border-top: 0.21px solid #1252a0;
-    border-bottom: 0.21px solid #1252a0;
-
-    padding: 20px;
-    padding-left: 45px;
-    list-style: none; */
-    /*margin-left: 20px;*/
-    /* transition: 0.5s ease; */
 
 }

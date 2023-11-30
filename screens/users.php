@@ -37,16 +37,6 @@ $results = $conn->query($sql);
 <?php
 
 
-// echo "This is the content for the users screen.";
-
-// if ($results->num_rows > 0) {
-//     foreach ($results as $result) {
-//         echo "Name: " . $result['firstname'] . ", Email: " . $result['email'] . ", Role: " . $result['role'];
-//     }
-// } else {
-//     echo "No users found.";
-// }
-
 ?>
 <div id='userbody'>
    

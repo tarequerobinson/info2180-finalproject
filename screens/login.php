@@ -119,13 +119,6 @@ input[type="submit"]{
 	outline: none;
 }
 
-/* input[type="submit"]:hover{
-	
-	
-	border-color: white;
-	transition: .8s;
-	
-} */
 
 .forgotPassword{
 	
@@ -160,9 +153,6 @@ color: white ;
 
 </head>
 <body>
-<!-- <header>
-        Dolphin CRM
-    </header> -->
 
 <div id="loginbody" class = "center">
 <h1> Login</h1>
@@ -183,9 +173,6 @@ color: white ;
 	</div>
     <p>Copyright © 2023 Dolphin CRM</p>
 
-	<!-- <div class = "forgotPassword">		
-    	<a href ="#">Forgot Password?</a> 
-	</div> -->
 	
 	</form>
 	
