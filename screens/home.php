@@ -58,8 +58,8 @@ echo "This is the content for the new home screen.";
     <?php endforeach; ?>
     </tbody>
 </table>
-<script src="js/app.js"></script>
-    <script src="js/home.js"></script>
+<script src="js/index.js"></script>
+<script src="js/dashboard.js"></script>
 
 
 

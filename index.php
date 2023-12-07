@@ -1,4 +1,4 @@
-<!DOCTYPE html>
++<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -29,7 +29,7 @@
         <nav>
             <ul>
                 <li onclick="loadScreen('home')"> <i class="fa-solid fa-house"></i> Home </li>
-                <li onclick="loadScreen('contact')"><i class="fa-regular fa-circle-user"></i>New Contact</li>
+                <li onclick="loadScreen('contact')"><i class="fa-regular fa-circle-user"></i> New Contact</li>
                 <li onclick="loadScreen('users')"><i class="fa-solid fa-user-group"></i> Users </li>
                 <li onclick="loadLoginPage()"><i class="fa-solid fa-user-group"></i> Logout </li>
             </ul>
