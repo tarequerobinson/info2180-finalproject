@@ -6,8 +6,6 @@
     margin-top: -5px;
     padding: 10px;    
     padding-left: 25px;
-	border:  1.5px solid rgba(37, 90, 154, 0.591);
-    background-color: rgba(255, 255, 255, 0.912);
 }
 
 #userHead h1 {
@@ -31,7 +29,6 @@
 }
 
 #userbody{
-    background-color: rgba(255, 255, 255, 0.912);
     border-radius: 3px;    
 	border:  1.5px solid rgba(37, 90, 154, 0.591);
     margin-top: 20px;

@@ -26,7 +26,7 @@ body{
 }
 
 .center h2{
-	color: rgba(20, 56, 99, 0.824);
+	color: rgba(35, 77, 129, 0.824);
 	text-align: center;
 	padding: 0 0 10px 0;
 }
@@ -45,11 +45,11 @@ body{
 	color:black;	
 	width: 100%;
     margin-bottom: 20px;
-	height: 40px;
-	border:  2px solid rgba(37, 90, 154, 0.824);
+	height: 35px;
+	border:  1.6px solid rgba(37, 90, 154, 0.824);
     padding-left: 11px; 
 	padding-right: 11px; 
-    border-radius: 10px;
+    border-radius: 8px;
 }
 
 .textField label{	
@@ -73,12 +73,13 @@ header{
 #loginbody{	
     justify-content: center;
     align-items: center;
-	background-color: rgba(255, 255, 255, 0.904);
+	width: 35%;
+	background-color: rgb(232, 239, 243);
     border-radius: 10px;
     margin-top: 12px;
     padding: 20px;
 	padding-right: 35px;
-    border: 2px solid rgb(255, 255, 255);
+    border: 2px solid rgba(255, 255, 255, 0.912);
     box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px,
                 rgba(0, 0, 0, 0.07) 0px 16px 16px;
 	
@@ -89,12 +90,12 @@ header{
 }
 
 button {	
-	height: 50px;
-	width: 108%;
+	height: 40px;
+	width: 108.5%;
 	padding-left:11px;
-	border: 2px solid rgba(21, 58, 104, 0.824);
+	border: 1.5px solid rgba(21, 58, 104, 0.824);
     background-color: rgba(28, 71, 125, 0.824);
-	border-radius: 10px;
+	border-radius: 8px;
 	font-size:18px;
 	color: white;
 	cursor: pointer;
@@ -107,7 +108,9 @@ button:hover{
 
 form p{
 	font-weight: bold;
+	color: rgba(32, 81, 140, 0.912);
 	text-align: center;
+	padding-left: 10px;
 }
 
 .forgotPassword{
