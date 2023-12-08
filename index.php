@@ -46,6 +46,11 @@
             <div id="newuser" class="hidden">
                 <!-- Services screen content goes here -->
             </div>
+
+            <div id="contactDetails" class="hidden">
+                <!-- Services screen content goes here -->
+            </div>
+
         </div>
     </div>
 

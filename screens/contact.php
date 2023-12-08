@@ -1,11 +1,15 @@
 <?php 
-    require_once("../database/dbsetup.php");
+    include("../database/dbsetup.php");
+
+   
+
     $sql = "SELECT * FROM contacts";
     $results = $conn->query($sql); 
 
     if (!$results) {
         die("Error: " . $conn->error);
     }    
+
 ?>
 
 
@@ -23,35 +27,45 @@
 <h1>New Contact</h1>
 
 
-<form id = "newContactForm" action = ".php" method = "POST">
+<form id = "newContactForm" action = "database/contactConnect.php" method = "POST" >
 
     <div id = "formColumn1">
 
-        <div id="formfield">
+
+    <div class="formfield">
+                <label for="title">Title</label>
+                <select name="title" id="title">
+                    <option value="member">Mr</option>
+                    <option value="admin">Mrs</option>                    
+                </select>
+        </div>
+
+
+        <div class="formfield">
             <div>
                 <label for= "firstname"> First Name<label>
             </div>
             <div>
-                <input id = "firstname" type="text" required placeholder="Jane">
+                <input id = "firstname" type="text" required placeholder="Jane" name="firstname">
             </div>
         </div>
 
-        <div id="formfield">
+        <div class="formfield">
             <div>
                 <label for= "email">Email<label>
-            <div>
+            </div>
             <div>
 
-                <input id = "email" type="text" required placeholder="something@example.com">
+                <input id = "email" type="text" required placeholder="something@example.com" name="email">
             </div>
         </div>
 
-        <div id="formfield">
+        <div class="formfield">
             <div>
                 <label for= "company">Company<label>
             </div>
             <div>
-                <input id = "company" type="select" required >
+                <input id = "company" type="select" required name="company" >
             </div>
         </div>
     </div>
@@ -63,25 +77,25 @@
                 <label for= "lastname">Lastname<label>
             </div>
             <div>
-                <input id = "lastname" type="text" required>
+                <input id = "lastname" type="text" required name="lastname">
             </div>
         </div>
 
-        <div id="formfield">
+        <div class="formfield">
             <div>
                 <label for= "telephone"> Telephone<label>
             </div>
             <div>
-                <input id = "telephone" type="text" required placeholder="Doe">
+                <input id = "telephone" type="text" required placeholder="Doe" name="telephone">
             </div>
         </div>
 
-        <div id="formfield">
+        <div class="formfield">
             <div>
                 <label for= "type"> Type<label>
             </div>
             <div>
-                <input id = "type" type="text" required placeholder="Doe">
+                <input id = "type" type="text" required placeholder="Doe" name="type">
             </div>
         </div>
     </div>
@@ -94,11 +108,7 @@
 </html>
 
 
-<?php
-// content/home.php
 
 
-// echo "This is the content for the New Contact screen.";
-?>
 
 

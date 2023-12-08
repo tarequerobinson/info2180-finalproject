@@ -1,5 +1,4 @@
 <?php
-
 $host = 'localhost';
 $username = 'project2_user';
 $password = 'password123';
