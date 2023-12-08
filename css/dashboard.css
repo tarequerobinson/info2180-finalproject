@@ -7,7 +7,7 @@
     padding: 10px;    
     padding-left: 25px;
 	border:  1.5px solid rgba(37, 90, 154, 0.591);
-    background-color: rgba(255, 255, 255, 0.912);
+    background-color: rgba(255, 255, 255, 0.85);
 }
 
 #userHead h1 {
@@ -31,7 +31,7 @@
 }
 
 #userbody{
-    background-color: rgba(255, 255, 255, 0.912);
+    background-color: rgba(255, 255, 255, 0.85);
     border-radius: 3px;    
 	border:  1.5px solid rgba(37, 90, 154, 0.591);
     margin-top: 20px;
