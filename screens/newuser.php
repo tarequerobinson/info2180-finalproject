@@ -26,7 +26,7 @@
     ?>-->
 
     <div id='userbody'> 
-        <form action="">
+        <form action="database/newUserConnect.php" method="POST">
             <div id='div1'>
                 <div id='userfname'> 
                     <label for="fname">First Name</label>
