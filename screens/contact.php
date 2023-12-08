@@ -1,12 +1,11 @@
 <?php 
-require_once("../database/dbsetup.php");
-$sql = "SELECT * FROM contacts";
-$results = $conn->query($sql); 
+    require_once("../database/dbsetup.php");
+    $sql = "SELECT * FROM contacts";
+    $results = $conn->query($sql); 
 
     if (!$results) {
         die("Error: " . $conn->error);
-    }
-    
+    }    
 ?>
 
 
@@ -18,6 +17,7 @@ $results = $conn->query($sql);
     <link rel="stylesheet" href="css/contact.css">
     <title>New Contact</title>
 </head>
+
 <body>
 
 <h1>New Contact</h1>
@@ -94,6 +94,7 @@ $results = $conn->query($sql);
 
     
 </body>
+
 </html>
 
 

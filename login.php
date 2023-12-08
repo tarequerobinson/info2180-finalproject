@@ -1,5 +1,5 @@
 <?php 
-require_once("../database/dbsetup.php");
+    require_once("database/dbsetup.php");
 ?>
 
 
@@ -7,39 +7,31 @@ require_once("../database/dbsetup.php");
 <html>
 <head>
 	<meta charset="ISO-8859-1">
-	<title>Dolphin CRM </title>
-	<link rel="stylesheet" href="../css/login.css"/>
+	<title>Login Dolphin CRM</title>
+	<link rel="stylesheet" href="css/login.css"/>
 </head>
 
 <body>
+    <div id="loginbody" class = "center">
+        <h2>Login to Your Account</h2>      
 
-<div id="loginbody" class = "center">
-<h1> Login</h1>
-	
+        <form action="" method="post">
+            <div class = "textField">
+                <input placeholder="Email address" type = "text" name ="email" required> 
+            </div>	
+            <div class = "textField">		
+                <input placeholder="Password" type = "password" name ="password" required>
+            </div>
+            <div class = "loginbutton">
+                <button type = "submit" value ="Login"> Login </button>
+            </div>
 
-
-<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-	<div class = "textField">
-		<input placeholder="Email address" type = "text" name ="email" required> 
-		<!-- <label>Em</label> -->
-	</div>	
-	<div class = "textField">		
-		<input placeholder="Password"type = "password" name ="password" required> 
-		<!-- <label>Password</label> -->
-	</div>
-	<div class = "loginbutton">
-		<input type = "submit" value ="Login">
-	</div>
-    <p>Copyright © 2023 Dolphin CRM</p>
-
-	
-	</form>
-	
-	
-</div>
-	
-	
+            <p>Copyright © 2023 Dolphin CRM</p>        
+        </form>       
+    </div>        
+        
 </body>
+
 </html>
 
 
@@ -76,7 +68,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 }
 
-// $conn->close();
 ?>
 
 
