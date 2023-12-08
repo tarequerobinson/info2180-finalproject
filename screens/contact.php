@@ -1,12 +1,11 @@
 <?php 
-require_once("../database/dbsetup.php");
-$sql = "SELECT * FROM contacts";
-$results = $conn->query($sql); 
+    require_once("../database/dbsetup.php");
+    $sql = "SELECT * FROM contacts";
+    $results = $conn->query($sql); 
 
     if (!$results) {
         die("Error: " . $conn->error);
-    }
-    
+    }    
 ?>
 
 
@@ -15,22 +14,24 @@ $results = $conn->query($sql);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+    <title>New Contact</title>    
+    <link rel="stylesheet" type= "text/css" href="css/contact.css">
 </head>
+
 <body>
+    <div id="userHead">
+        <h1>New Contact</h1>  
+    </div>
+       
 
-<h1>New Contact</h1>
-
-    
 </body>
+
 </html>
 
 
 <?php
-// content/home.php
-
-
-echo "This is the content for the New Contact screen.";
+    echo "This is the content for the New Contact screen.";
 ?>
 
 

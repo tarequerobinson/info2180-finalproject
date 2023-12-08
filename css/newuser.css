@@ -1,0 +1,118 @@
+#userHead{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+h1{
+    color: rgb(19, 40, 66);
+    font-size: 20px;
+}
+
+#userbody{
+    align-items: space-between;
+    font-size: 15px;
+}
+
+#div1{
+    flex-direction: row;
+    display: flex;
+    padding: 15px;
+    width: 94%;
+    padding-right: -15px;
+    justify-content: space-between;
+}
+
+#div2{
+    flex-direction: row;
+    display: flex;
+    padding: 15px;    
+    width: 94%;
+    padding-right: -15px;
+    justify-content: space-between;
+}
+
+#userbody input[type='text'], input[type='email'], input[type='password'], select{
+    font: inherit;
+    background-color: rgba(255, 255, 255, 0.5);
+    margin: 0;
+    border-radius: 3px;
+    outline: inherit;
+    width: 100%;
+    height: 30px;
+    border: solid;
+    border-width: 0.5px;
+    padding-left: 11px;
+    margin-right: 15px;
+}
+
+#userbody input::placeholder{
+    overflow: visible;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+label {
+    margin-bottom: 6px;
+}
+
+#userfname{
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+}
+
+#userlname{
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+}
+
+#useremail{
+    display: flex;
+    flex-direction: column; 
+    width: 45%;
+}
+
+#userpass{
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+}
+
+#userrole{
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+    padding: 15px;
+    padding-right: -15px;
+}
+
+
+#savectrl{
+    padding-top: 10px;
+    padding-bottom: 5px;
+    display: flex;
+    flex-direction: row-reverse;
+    width: 98%;
+}
+
+#savectrl button{
+    background: rgb(59, 82, 113);  
+    border-radius: 2px;  
+    font-size: 13px;
+    color: white;
+    border: none;
+    padding: 10px; 
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+#savectrl button:hover{
+    background: rgb(28, 43, 63);
+}
+
