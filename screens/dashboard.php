@@ -42,9 +42,9 @@
                 <tr>
                     <td><strong><?= $row['firstname'] ?> <?= $row['lastname'] ?></strong></td>
                     <td><?= $row['email'] ?></td>
-
                     <td><?= $row['company'] ?></td>
                     <td class="contacttype"><?= $row['type'] ?></td>
+                    <td><button type="submit" id="contactDetailsLink" onclick="loadContactDetails('contactDetails' , <?= $row['id'] ?>)" >View</button></td>
                 </tr>
             <?php endforeach; ?>
             </tbody>
@@ -56,3 +56,10 @@
 </html>
 <script src="../js/dashboard.js"></script>
 <script src="js/index.js"></script>
+
+<script>
+    document.getElementById('contactDetailsLink').addEventListener('click', function(event) {
+        event.preventDefault();
+        loadScreen('contactDetails.php?id=', <?= $row['id'] ?>);
+    });
+</script>
