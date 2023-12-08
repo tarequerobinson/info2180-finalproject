@@ -1,5 +1,4 @@
-
-#userHead{
+#dashHead{
     display: flex;
     align-items: center;
     justify-content: space-between;    
@@ -10,14 +9,16 @@
     background-color: rgba(255, 255, 255, 0.85);
 }
 
-#userHead h1 {
-    display: inline;
+#dashHead h1{
+    display: inline;    
+    color: rgb(19, 40, 66);
+    font-size: 18px;
 }
 
-#userHead button{
+#dashHead button{
     background: rgb(59, 82, 113);  
     border-radius: 2px;  
-    font-size: 13px;
+    font-size: 11px;
     color: white;
     border: none;
     padding: 7px; 
@@ -26,49 +27,61 @@
     margin-right: 8px;
 }
 
-#userHead button:hover{
+#dashHead button:hover{
     background: rgb(28, 43, 63);
 }
 
-#userbody{
+#dashBody{
+    align-items: center;
+    justify-content: center;
     background-color: rgba(255, 255, 255, 0.85);
     border-radius: 3px;    
 	border:  1.5px solid rgba(37, 90, 154, 0.591);
     margin-top: 20px;
-    width: 71.5vw;
-    padding: 25px;
+    width: 72.5vw;
+    padding: 23px;
 }
 
-h1{
-    color: rgb(19, 40, 66);
-    font-size: 21px;
-}
-
-table {
+#dashBody table {
 	border-collapse: collapse;
     border-radius: 3px;
     border: 1.3px solid #00000046;
     font-size: 12px;
-    width: 71.5vw;
+    width: 72.5vw;
 }
-table td {
+#dashBody table td {
 	padding: 11px;
-    padding-right: 40px;
+    padding-right: 38px;
     padding-left: 25px;
     border-top: 1.3px solid rgba(63, 63, 63, 0.663);  
 }
-table th {
+#dashBody table th {
     font-weight: bold;
     font-size: 14px;
     text-align: left;   
     padding: 11px; 
     padding-left: 25px;   
     color: white;
-    background-color: rgba(72, 108, 144, 0.868);
+    background-color: rgba(66, 99, 131, 0.868); 
 }
-table thead td {
+#dashBody table thead td {
 	font-weight: bold;
     padding-left: 20px;
 }
 
-   
+#dashBody td button{
+    background: rgba(48, 76, 104, 0.868);
+    border-radius: 2px;  
+    font-size: 12px;
+    color: white;
+    border: none;
+    padding: 4px; 
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-right: -8px;
+    margin-left: 0px;
+}
+
+#dashBody td button:hover{
+    background: rgba(19, 33, 48, 0.868);
+}

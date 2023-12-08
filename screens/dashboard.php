@@ -16,18 +16,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <script src="../js/dashboard.js"></script>
     <script src="js/index.js"></script>     -->
-    <link rel="stylesheet" href="css/dashboard.css">
-    
+    <link rel="stylesheet" href="css/dashboard.css">    
     <title>Dashboard</title>
 </head>
 
 <body>
-    <div id="userHead">
+    <div id="dashHead">
         <h1>Dashboard</h1>  
         <button onclick="loadScreen('contact')"> <i class="fa-solid fa-plus"></i> Add Contact</button>     
     </div>       
 
-    <div id='userbody'> 
+    <div id='dashBody'> 
         <table id="contactstable">
             <thead>
                 <tr>
@@ -35,6 +34,7 @@
                     <th>Email</th>
                     <th>Company</th>
                     <th>Type</th>
+                    <th> </th>
                 </tr>
             </thead>
             <tbody>

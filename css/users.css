@@ -1,4 +1,3 @@
-
 #userHead{
     display: flex;
     align-items: center;
@@ -6,16 +5,20 @@
     margin-top: -5px;
     padding: 10px;    
     padding-left: 25px;
+	border:  1.5px solid rgba(37, 90, 154, 0.591);
+    background-color: rgba(255, 255, 255, 0.85);
 }
 
-#userHead h1 {
-    display: inline;
+#userHead h1{
+    display: inline;    
+    color: rgb(19, 40, 66);
+    font-size: 18px;
 }
 
 #userHead button{
     background: rgb(59, 82, 113);  
     border-radius: 2px;  
-    font-size: 13px;
+    font-size: 11px;
     color: white;
     border: none;
     padding: 7px; 
@@ -28,44 +31,40 @@
     background: rgb(28, 43, 63);
 }
 
-#userbody{
+#userBody{
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.85);
     border-radius: 3px;    
 	border:  1.5px solid rgba(37, 90, 154, 0.591);
     margin-top: 20px;
     width: 71.5vw;
-    padding: 25px;
+    padding: 23px;
 }
 
-h1{
-    color: rgb(19, 40, 66);
-    font-size: 21px;
-}
-
-table {
+#userBody table{
 	border-collapse: collapse;
     border-radius: 3px;
     border: 1.3px solid #00000046;
     font-size: 12px;
     width: 71.5vw;
 }
-table td {
+#userBody table td{
 	padding: 11px;
-    padding-right: 40px;
+    padding-right: 38px;
     padding-left: 25px;
     border-top: 1.3px solid rgba(63, 63, 63, 0.663);  
 }
-table th {
+#userBody table th{
     font-weight: bold;
     font-size: 14px;
     text-align: left;   
     padding: 11px; 
     padding-left: 25px;   
     color: white;
-    background-color: rgba(72, 108, 144, 0.868);
+    background-color: rgba(66, 99, 131, 0.868); 
 }
-table thead td {
+#userBody table thead td{
 	font-weight: bold;
     padding-left: 20px;
 }
-
-   
