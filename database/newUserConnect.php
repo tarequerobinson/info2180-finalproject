@@ -5,7 +5,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $firstname = isset($_POST['firstname']) ? $_POST['firstname'] : '';
         $lastname = isset($_POST['lastname']) ? $_POST['lastname'] : '';
         $email = isset($_POST['email']) ? $_POST['email'] : '';
-        $role = isset($_POST['role']) ? $_POST['type'] : '';
+        $role = isset($_POST['role']) ? $_POST['role'] : '';
         $password = isset($_POST['password']) ? $_POST['password'] : '';
 
 
