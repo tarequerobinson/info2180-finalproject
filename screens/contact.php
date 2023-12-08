@@ -58,7 +58,6 @@
 
 
     <div id = "formColumn2">
-
         <div id="formfield">
             <div>
                 <label for= "lastname">Lastname<label>
@@ -85,11 +84,8 @@
                 <input id = "type" type="text" required placeholder="Doe">
             </div>
         </div>
-
-
-
     </div>
-<button id="saveContactButton" type="submit">Save</button>
+    <button id="saveContactButton" type="submit">Save</button>
 </form>
 
     
