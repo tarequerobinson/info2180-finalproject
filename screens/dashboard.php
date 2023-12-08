@@ -14,8 +14,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <script src="js/home.js"></script> -->
     <script src="../js/dashboard.js"></script>
+    <script src="js/index.js"></script>    
     <link rel="stylesheet" href="css/dashboard.css">
     
     <title>Dashboard</title>
@@ -24,7 +24,7 @@
 <body>
     <div id="userHead">
         <h1>Dashboard</h1>  
-        <button> <i class="fa-solid fa-plus"></i> Add Contact</button>     
+        <button onclick="loadScreen('contact')"> <i class="fa-solid fa-plus"></i> Add Contact</button>     
     </div>       
 
     <div id='userbody'> 
