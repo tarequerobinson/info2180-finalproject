@@ -1,6 +1,6 @@
 <?php 
-    require_once("database/dbsetup.php");
-?>
+    include("../database/dbsetup.php");
+    ?>
 
 
 <!DOCTYPE html>

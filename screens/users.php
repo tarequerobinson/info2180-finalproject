@@ -1,5 +1,5 @@
 <?php 
-    require_once("../database/dbsetup.php");
+    include("../database/dbsetup.php");
     $sql = "SELECT * FROM users";
     $results = $conn->query($sql); 
 

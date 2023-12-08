@@ -1,5 +1,5 @@
 <?php 
-    require_once("../database/dbsetup.php");
+    include("../database/dbsetup.php");
     $sql = "SELECT * FROM contacts";
     $results = $conn->query($sql); 
 
@@ -14,8 +14,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="../js/dashboard.js"></script>
-    <script src="js/index.js"></script>    
+    <!-- <script src="../js/dashboard.js"></script>
+    <script src="js/index.js"></script>     -->
     <link rel="stylesheet" href="css/dashboard.css">
     
     <title>Dashboard</title>
@@ -54,3 +54,5 @@
 </body>
 
 </html>
+<script src="../js/dashboard.js"></script>
+<script src="js/index.js"></script>

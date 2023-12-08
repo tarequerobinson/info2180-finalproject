@@ -1,5 +1,5 @@
 <?php 
-require_once("dbsetup.php");
+include("dbsetup.php");
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $firstname = isset($_POST['firstname']) ? $_POST['firstname'] : '';

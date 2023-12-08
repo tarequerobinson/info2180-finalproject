@@ -1,5 +1,5 @@
 <?php 
-    require_once("../database/dbsetup.php");
+    include("../database/dbsetup.php");
 
    
 
@@ -27,11 +27,21 @@
 <h1>New Contact</h1>
 
 
-<form id = "newContactForm" action = "database/contactConnect.php" method = "POST">
+<form id = "newContactForm" action = "database/contactConnect.php" method = "POST" >
 
     <div id = "formColumn1">
 
-        <div id="formfield">
+
+    <div class="formfield">
+                <label for="title">Title</label>
+                <select name="title" id="title">
+                    <option value="member">Mr</option>
+                    <option value="admin">Mrs</option>                    
+                </select>
+        </div>
+
+
+        <div class="formfield">
             <div>
                 <label for= "firstname"> First Name<label>
             </div>
@@ -40,17 +50,17 @@
             </div>
         </div>
 
-        <div id="formfield">
+        <div class="formfield">
             <div>
                 <label for= "email">Email<label>
-            <div>
+            </div>
             <div>
 
                 <input id = "email" type="text" required placeholder="something@example.com" name="email">
             </div>
         </div>
 
-        <div id="formfield">
+        <div class="formfield">
             <div>
                 <label for= "company">Company<label>
             </div>
@@ -63,7 +73,7 @@
 
     <div id = "formColumn2">
 
-        <div id="formfield">
+        <div class="formfield">
             <div>
                 <label for= "lastname">Lastname<label>
             </div>
@@ -72,7 +82,7 @@
             </div>
         </div>
 
-        <div id="formfield">
+        <div class="formfield">
             <div>
                 <label for= "telephone"> Telephone<label>
             </div>
@@ -81,7 +91,7 @@
             </div>
         </div>
 
-        <div id="formfield">
+        <div class="formfield">
             <div>
                 <label for= "type"> Type<label>
             </div>
@@ -93,13 +103,16 @@
 
 
     </div>
-<button id="saveContactButton" type="submit">Save</button>
+<button  id="saveContactButton" type="submit">Save</button>
+
 </form>
 
     
 </body>
 
 </html>
+
+
 
 
 
