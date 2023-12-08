@@ -1,0 +1,62 @@
+#newContactForm {
+
+    display: flex;
+    /* flex-direction:column; */
+    /* justify-content: space-between; */
+    width: 900px;
+    height: 500px;
+    /* background-color: aquamarine; */
+
+
+
+
+}
+
+#saveContactButton{
+
+    background-color: rgb(77, 48, 236);
+    border-radius: 10px;
+    height: 40px;
+    width: 100px;
+    color: white;
+    border: none ;
+
+
+
+}
+input{
+
+    border-radius: 5px;
+    border: 1px whitesmoke;
+    height: 20px;
+}
+
+#formfield{
+
+    display: flex;
+    flex-direction: column;
+}
+
+#formColumn1
+{
+    display: flex;
+    flex-direction: column;
+    /* background-color: red;  */
+    /* flex:1; */
+    width: 250px;
+
+
+    /* justify-content: space-evenly; */
+    /* margin-bottom: 50px; */
+}
+
+#formColumn2
+{
+    display: flex;
+    flex-direction: column;
+    /* background-color: green; */
+    /* flex:2; */
+    width: 250px;
+
+
+}
