@@ -15,7 +15,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <link rel="stylesheet" type = text/css href="css/users.css">
+    <link rel="stylesheet" href="css/users.css">
     <script src="js/index.js"></script>
     <title>Users</title>
 </head>
@@ -26,7 +26,7 @@
         <button onclick="loadScreen('newuser')"><i class="fa-solid fa-plus"></i> Add User</button>
     </div>   
     
-    <div id='userbody'>   
+    <div id='userBody'>   
         <table>
             <thead>
             <tr>

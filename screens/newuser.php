@@ -17,7 +17,7 @@
 </head>
 
 <body>
-    <div id="userHead">
+    <div id="nuserHead">
         <h1>New User</h1>   
     </div>
 
@@ -25,7 +25,7 @@
         echo "This is the content for the New User screen.";
     ?>-->
 
-    <div id='userbody'> 
+    <div id='nuserBody'> 
         <form action="database/newUserConnect.php" method="POST">
             <div id='div1'>
                 <div id='userfname'> 

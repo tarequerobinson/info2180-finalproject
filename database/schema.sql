@@ -66,6 +66,10 @@ VALUES
     ('Jackson', 'Baker', 'Creative Minds', 'Partner', 49, 50, '2023-12-21', '555-5432', 'jackson.baker@example.com');
 
 
+--
+-- Table structure for table `notes`
+--
+
 DROP TABLE IF EXISTS `notes`;
 CREATE TABLE `notes` (
  `id` int(11) NOT NULL AUTO_INCREMENT,

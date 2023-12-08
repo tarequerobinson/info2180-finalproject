@@ -1,7 +1,5 @@
 <?php 
-    include("../database/dbsetup.php");
-
-   
+    include("../database/dbsetup.php");   
 
     $sql = "SELECT * FROM contacts";
     $results = $conn->query($sql); 
@@ -23,90 +21,95 @@
 </head>
 
 <body>
+    <div id="ncontactHead">
+        <h1>New Contact</h1>
+    </div>      
 
-<h1>New Contact</h1>
-
-
-<form id = "newContactForm" action = "database/contactConnect.php" method = "POST" >
-
-    <div id = "formColumn1">
-
-
-    <div class="formfield">
+    <div id="ncontactBody">
+        <form id = "newContactForm" action = "database/contactConnect.php" method = "POST" >
+ 
+            <div class="formselect" id="divtitle">
                 <label for="title">Title</label>
                 <select name="title" id="title">
-                    <option value="member">Mr</option>
-                    <option value="admin">Mrs</option>                    
+                    <option value="mr">Mr</option>
+                    <option value="mrs">Mrs</option>     
+                    <option value="ms">Miss</option>                
                 </select>
-        </div>
-
-
-        <div class="formfield">
-            <div>
-                <label for= "firstname"> First Name<label>
             </div>
-            <div>
-                <input id = "firstname" type="text" required placeholder="Jane" name="firstname">
+
+            <div id = "div1">
+                <div id = "formRow1">            
+                    <div id="cnctfname">
+                        <div>
+                            <label for= "firstname"> First Name<label>
+                        </div>
+                        <div>
+                            <input id = "firstname" type="text" required placeholder="eg. Jane" name="firstname">
+                        </div>
+                    </div>
+
+                    <div id="cnctlname">
+                        <div>
+                            <label for= "lastname">Lastname<label>
+                        </div>
+                        <div>
+                            <input id = "lastname" type="text" placeholder="eg. Doe" required name="lastname">
+                        </div>
+                    </div>
+                </div>
+
+                <div id = "formRow2">
+                    <div id="cnctemail">
+                        <div>
+                            <label for= "email">Email<label>
+                        </div>
+                        <div>
+                            <input id = "email" type="text" required placeholder="eg. something@example.com" name="email">
+                        </div>
+                    </div> 
+
+                    <div id="cnctphone">
+                        <div>
+                            <label for= "telephone"> Telephone<label>
+                        </div>
+                        <div>
+                            <input id = "telephone" type="text" required placeholder="eg. 876-123-4567" name="telephone">
+                        </div>
+                    </div>
+                </div>
+
+                <div id = "formRow3">
+                    <div id="cnctcompany">
+                        <div>
+                            <label for= "company">Company<label>
+                        </div>
+                        <div>
+                            <input id = "company" type="text" required name="company" >
+                        </div>
+                    </div>
+                    <div id="cncttype">
+                        <label for="type">Type</label>
+                        <select name="type" id="type">
+                            <option value="support">Support</option>
+                            <option value="sales">Sales Lead</option>                
+                        </select>
+                    </div>
+                </div>
             </div>
-        </div>
 
-        <div class="formfield">
-            <div>
-                <label for= "email">Email<label>
+            <div class="formselect" id="divassign">
+                <label for="title">Assigned To</label>
+                <select name="assigned" id="assigned">
+                    <option value="user">Fname Lname</option>      
+                </select>
             </div>
-            <div>
 
-                <input id = "email" type="text" required placeholder="something@example.com" name="email">
+            <div id='savectrl'> 
+                <button id="saveContactButton" type="submit">Save</button>                
             </div>
-        </div>
-
-        <div class="formfield">
-            <div>
-                <label for= "company">Company<label>
-            </div>
-            <div>
-                <input id = "company" type="select" required name="company" >
-            </div>
-        </div>
-    </div>
-
-
-    <div id = "formColumn2">
-
-        <div class="formfield">
-            <div>
-                <label for= "lastname">Lastname<label>
-            </div>
-            <div>
-                <input id = "lastname" type="text" required name="lastname">
-            </div>
-        </div>
-
-        <div class="formfield">
-            <div>
-                <label for= "telephone"> Telephone<label>
-            </div>
-            <div>
-                <input id = "telephone" type="text" required placeholder="Doe" name="telephone">
-            </div>
-        </div>
-
-        <div class="formfield">
-            <div>
-                <label for= "type"> Type<label>
-            </div>
-            <div>
-                <input id = "type" type="text" required placeholder="Doe" name="type">
-            </div>
-        </div>
-
-
-
-    </div>
-<button  id="saveContactButton" type="submit">Save</button>
-
-</form>
-
+        </form>
+    
+    </div>    
     
 </body>
 
