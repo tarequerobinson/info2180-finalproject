@@ -68,10 +68,23 @@ VALUES
 
 DROP TABLE IF EXISTS `notes`;
 CREATE TABLE `notes` (
-  `id` int(11) NOT NULL auto_increment,
-  `contact_id` varchar(35) NOT NULL default '',
-  `comment` varchar(35) NOT NULL default '',
-  `created_by` varchar(35) NOT NULL default '',
-  `created_at` varchar(35) NOT NULL default ''
+ `id` int(11) NOT NULL AUTO_INCREMENT,
+  `contact_id` int(11) NOT NULL,
+  `comment` text NOT NULL,
+  `created_by` int(11) NOT NULL,
+ `created_at` DATE NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=4080 DEFAULT CHARSET=utf8mb4;
+
+--
+-- Mock data for `notes`
+--
+
+INSERT INTO `notes` (`contact_id`, `comment`, `created_by`, `created_at`) VALUES
+(1, 'This is a sample note for contact 1.', 101, '2023-12-01'),
+(2, 'A note about contact 2.', 102, '2023-12-02'),
+(3, 'Reminder for contact 3.', 103, '2023-12-03'),
+(1, 'Additional note for contact 1.', 104, '2023-12-04'),
+(2, 'Important information for contact 2.', 105, '2023-12-05'),
+(3, 'Follow-up task for contact 3.', 106, '2023-12-06');
 
