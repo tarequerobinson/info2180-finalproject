@@ -47,6 +47,8 @@ if ($stmt) {
         Company: <?= $result['company'] ?>
     </div>
 
+    <
+
 </div>
     
 </body>
