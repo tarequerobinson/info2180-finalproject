@@ -2,7 +2,7 @@
 var textarea = document.getElementById("comment");
 
 function getUserbyID(id){
-    console.log('poopie')
+    console.log('is it running Users')
     var xhr = new XMLHttpRequest();
     url = `database/notesConnect.php?id=${id}`;
 
@@ -13,7 +13,6 @@ function getUserbyID(id){
     if (xhr.readyState === 4 && xhr.status === 200) {
         document.getElementById("assignedTo").innerHTML = `Assigned to: ` + xhr.responseText;
     } else {
-        console.log('poopie')
     }
 };
 
@@ -22,7 +21,7 @@ function getUserbyID(id){
 }   
 
 function geNotesUserbyID(id){
-    console.log('poopie')
+    console.log('is it running Notes')
     var xhr = new XMLHttpRequest();
     url = `database/notesConnect.php?id=${id}`;
 
@@ -33,9 +32,9 @@ function geNotesUserbyID(id){
     if (xhr.readyState === 4 && xhr.status === 200) {
         
 
-        document.getElementById("CommentHeader").innerHTML = "<h1>" + xhr.responseText + "</h1>";
+        document.getElementById("CommentHeader").innerHTML = "<h3>" + xhr.responseText + "</h3>";
     } else {
-        console.log('poopie')
+        
     }
 };
 

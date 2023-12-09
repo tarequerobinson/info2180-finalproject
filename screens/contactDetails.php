@@ -2,6 +2,7 @@
 include("../database/dbsetup.php");
 
 $id = isset($_GET['id']) ? $_GET['id'] : '';
+$user_id = $_SESSION['user_id'] ;
 print_r($id);
 
 $stmt = $conn->prepare("SELECT * FROM contacts WHERE id = ?");
@@ -74,12 +75,17 @@ if ($notesStmt) {
     <?php endforeach; ?>
 </div>
 
-<div id="NotesEntry" m>
+<form action="database/notesConnect.php" method="post">
+    <input type="hidden" name="contact_id" id="contactId" value="<?= $id ?>">
+    <input type="hidden" name="created_by" id="createdBy" value="<?= $user_id ?>">
+    
     <h1>Add a note about <?= $result['firstname'] ?></h1>
-    <textarea id="comment" name="comment" placeholder="Enter details here"></textarea>
+    <textarea id="comment" name="comment">Enter details here</textarea>
     <br>
-    <button type="submit" id="save">Save</button>    
-</div>
+    <div id='savectrl'>
+        <button type="submit" id="save">Save</button>
+    </div>
+</form>
 
 </body>
 </html>
