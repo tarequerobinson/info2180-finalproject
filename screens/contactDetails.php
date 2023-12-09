@@ -2,8 +2,8 @@
 include("../database/dbsetup.php");
 
 $id = isset($_GET['id']) ? $_GET['id'] : '';
-/*$user_id = $_SESSION['user_id'] ;*/
-print_r($id);
+/*$user_id = $_SESSION['user_id']; 
+print_r($id);*/
 
 $stmt = $conn->prepare("SELECT * FROM contacts WHERE id = ?");
 $stmt->execute([$id]);
@@ -49,40 +49,64 @@ if ($notesStmt) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Details</title>
+
     <script src="js/contactDetails.js"></script>
-    
+    <link rel="stylesheet" type= "text/css" href="css/contactDetails.css">
 </head>
 
 <body>
     <div id="contactDetailsHead">
-        <h1> <?= $result['firstname'] ?> <?= $result['lastname'] ?> </h1>
-        <?php
-        // Conditionally display buttons based on the user type
-        if ($result['type'] === "Sales Lead") {
-            echo '<button id = "SupportButton" class = "switch" >Switch to Support</button>';
-        } elseif ($result['type'] === "Support") {
-            echo '<button id = "SalesButton" class = "switch" >Switch To Sales Lead</button>';
-        }
+        <h1><i class="fa-solid fa-id-card-clip"></i> <?= $result['firstname'] ?> <?= $result['lastname'] ?> </h1>
 
-        
-        ?>
-        <button id = "Assign" class = "assign" >Assign to Me</button>
+        <div id="contactHeadButtons">
+            <button id = "Assign" class = "assign" >Assign to Me</button>
+            <?php
+            // Conditionally display buttons based on the user type
+            if ($result['type'] === "Sales Lead") {
+                echo '<button id = "SupportButton" class = "switch" >Switch to Support</button>';
+            } elseif ($result['type'] === "Support") {
+                echo '<button id = "SalesButton" class = "switch" >Switch To Sales Lead</button>';
+            }        
+            ?>
+        </div>
     </div>
 
     <div id="contactDetailsBody">
-        Email: <?= $result['email'] ?>
-        Telephone: <?= $result['telephone'] ?>
-        Company: <?= $result['company'] ?>
-        <div id="assignedTo"></div>
+        <div id="div1">
+            <div class="detailsrow">
+                <h4>Email:</h4>
+                <?= $result['email'] ?>
+            </div>
+            <div class="detailsrow">
+                <h4>Company:</h4>
+                <?= $result['company'] ?>
+            </div>
+        </div>
+        <div id="div2">
+            <div class="detailsrow">
+                <h4>Telephone:</h4>
+                <?= $result['telephone'] ?>
+            </div>
+            <div class="detailsrow">
+                <h4>Assigned To:</h4>
+                <div id="assignedTo">
+                    Name
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div id="NotesBody">
+    <div id="NotesBody">    
+        <h1 id="NotesHead"><i class="fa-solid fa-pen-to-square"></i> Notes</h1>         
         <?php foreach ($notesResult as $row): ?>
-            <div id=C>header for user working on function</h3>
-            <p><strong><?= $row['comment'] ?> </strong></p>
-            <p><?= $row['created_at'] ?></p>
-            
-        <?php endforeach; ?>
+            <div class="NotesComment">
+                <i class="fa-solid fa-user"></i>
+                <div id="userfullname">Name Name</div>
+                <p><?= $row['comment'] ?></p>
+                <p id="commentdate">
+                    <?= $row['created_at'] ?></p>  
+            </div>        
+        <?php endforeach; ?>        
     </div>
     
     <div id="NotesEntry">
@@ -93,10 +117,10 @@ if ($notesStmt) {
 
             
             <h1>Add a note about <?= $result['firstname'] ?></h1>
-            <textarea id="comment" name="comment" placeholder="Enter details here"></textarea>
-            <br>
+            <textarea id="comment" name="comment" required placeholder="Enter note here..."></textarea>
+            
             <div id='savectrl'>
-                <button type="submit" id="save">Save</button>
+                <button type="submit" id="save">Post Note</button>
             </div>
         </form>
     </div>
