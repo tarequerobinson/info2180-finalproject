@@ -44,9 +44,10 @@ if ($notesStmt) {
 }
 
                 // Fetch user details based on created_by value
-                $userStmt = $conn->prepare("SELECT firstname, lastname FROM contact_i WHERE id = ?");
-                $userStmt->execute($result['assigned_to']);
+                $userStmt = $conn->prepare("SELECT firstname, lastname FROM users WHERE id = ?");
+                $userStmt->execute([$result['assigned_to']]);
                 $userResult = $userStmt->fetch(PDO::FETCH_ASSOC);
+                print_r($userResult);
               
 ?>
 <!DOCTYPE html>
@@ -104,7 +105,7 @@ if ($notesStmt) {
             <div class="detailsrow">
                 <h4>Assigned To:</h4>
                 <div id="assignedTo">
-                    Name
+                <?= $userResult['firstname'] . ' ' . $userResult['lastname'] ?>
                 </div>
             </div>
         </div>
