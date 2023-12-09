@@ -12,13 +12,20 @@ CREATE TABLE `users` (
   `firstname` varchar(35) NOT NULL default '',
   `lastname` varchar(35) NOT NULL default '',
   `role` varchar(35) NOT NULL default '',
-  `created_at` varchar(35) NOT NULL default '',
+  `created_at`  DATETIME NOT NULL DEFAULT '0000-00-00 00:00:00',
   `password` varchar(35) NOT NULL default '',
   `email` varchar(35) NOT NULL default '',
    PRIMARY KEY  (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=4080 DEFAULT CHARSET=utf8mb4;
 
 
+
+INSERT INTO `users` (`firstname`, `lastname`, `role`, `created_at`, `password`, `email`) VALUES
+( 'John', 'Doe', 'admin', '2021-09-16 10:30:00', 'johndoe', 'john.doe@example.com'),
+( 'Jane', 'Smith', 'user', '2021-09-16 11:30:00', 'janesmith', 'jane.smith@example.com'),
+('Sam', 'Johnson', 'user', '2021-09-16 12:30:00', 'samjohnson', 'sam.johnson@example.com'),
+('Sarah', 'Williams', 'user', '2021-09-16 13:30:00', 'sarahwilliams', 'sarah.williams@example.com'),
+( 'Michael', 'Brown', 'user', '2021-09-16 14:30:00', 'michaelbrown', 'michael.brown@example.com');
 
 
 
