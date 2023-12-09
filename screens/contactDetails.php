@@ -59,9 +59,9 @@ if ($notesStmt) {
         <?php
         // Conditionally display buttons based on the user type
         if ($result['type'] === "Support") {
-            echo '<button id = "switch">Switch to Support</button>';
+            echo '<button id = "SupportButton" class = "switch" >Switch to Support</button>';
         } elseif ($result['type'] === "Sales Lead") {
-            echo '<button id = "switch">Switch To Sales Lead</button>';
+            echo '<button id = "SalesButton" class = "switch" >Switch To Sales Lead</button>';
         }
         ?>
     </div>
@@ -100,10 +100,12 @@ if ($notesStmt) {
 </html>
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        console.log('Is the contentloading')
+        alert('I AM RUNNING');
+        console.log('Is the contentloading');
         getUserbyID(<?= $id ?>);
         getNoteUserbyID (<?= $id ?>);
-        setDatesforEach(<?= $row['created_at'] ?>)
+        setDatesforEach(<?= $notesResult['created_at'] ?>);
+        currentDateInput = document.getElementById("created_at")
         const today = new Date();
 
         // Format date
@@ -117,6 +119,7 @@ if ($notesStmt) {
         const seconds = String(today.getSeconds()).padStart(2, '0');
 
         // Combine date and time
+
         
         const formattedDateTime = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
         console.log(formattedDateTime)
