@@ -3,7 +3,7 @@ include("../database/dbsetup.php");
 
 $id = isset($_GET['id']) ? $_GET['id'] : '';
 $user_id = $_SESSION['user_id'] ;
-print_r($id);
+// print_r($id);
 
 $stmt = $conn->prepare("SELECT * FROM contacts WHERE id = ?");
 $stmt->execute([$id]);
@@ -34,7 +34,7 @@ if ($notesStmt) {
     // Check if the result is not empty
     if ($notesResult) {
         // Output the result or use it as needed
-        print_r($notesResult);
+        // print_r($notesResult);
     } else {
         echo "No notes found with the provided ID.";
     }
@@ -49,7 +49,8 @@ if ($notesStmt) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Details</title>
-    <script src=".../js/contactDetails.js"></script>
+    <script src="js/contactDetails.js"></script>
+    
 </head>
 
 <body>
@@ -67,7 +68,10 @@ if ($notesStmt) {
         } elseif ($result['type'] === "Sales Lead") {
             echo '<button id = "switch">Switch To Support</button>';
         }
+
+        
         ?>
+        <button id = "Assign" class = "assign" >Assign to Me</button>
     </div>
 
     <div id="contactDetailsBody">
@@ -102,12 +106,17 @@ if ($notesStmt) {
 
 </body>
 </html>
+
+<script src="js/contactDetails.js"></script>
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        console.log('Is the contentloading')
+    document.addEventListener('DOMContentLoaded', function(event) {
+        event.preventDefault();
+        alert('I AM RUNNING');
+        console.log('Is the contentloading');
         getUserbyID(<?= $id ?>);
         getNoteUserbyID (<?= $id ?>);
-        setDatesforEach(<?= $row['created_at'] ?>)
+        setDatesforEach(<?= $notesResult['created_at'] ?>);
+        currentDateInput = document.getElementById("created_at")
         const today = new Date();
 
         // Format date
@@ -121,6 +130,7 @@ if ($notesStmt) {
         const seconds = String(today.getSeconds()).padStart(2, '0');
 
         // Combine date and time
+
         
         const formattedDateTime = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
         console.log(formattedDateTime)
