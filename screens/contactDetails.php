@@ -57,8 +57,8 @@ if ($notesStmt) {
 
     <div id="contactDetailsHead">
         <h1> <?= $result['firstname'] ?> <?= $result['lastname'] ?> </h1>
-        <p> Created On: <?= $result['created_on'] ?> <?= $result['updated_at'] ?> </p>
-        <p> Updated At: <?= $result['created_on'] ?> <?= $result['updated_at'] ?> </p>
+        <p> Created On: <?= $result['created_on'] ?>  </p>
+        <p> Updated At: <?= $result['updated_at'] ?> </p>
 
 
         <?php

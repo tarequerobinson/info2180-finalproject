@@ -1,6 +1,11 @@
 <?php 
 include("dbsetup.php");
 
+date_default_timezone_set('America/Jamaica');
+$date = new DateTime();
+('d/m/Y');
+
+
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $firstname = isset($_POST['firstname']) ? $_POST['firstname'] : '';
         $lastname = isset($_POST['lastname']) ? $_POST['lastname'] : '';
@@ -8,10 +13,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $type = isset($_POST['type']) ? $_POST['type'] : '';
         $telephone = isset($_POST['telephone']) ? $_POST['telephone'] : '';
         $company = isset($_POST['company']) ? $_POST['company'] : '';
+        $hrfix = intval($date->format("H")) - 1;
+        $createdat = $date->format("Y-m-d") . " " . $date->format($hrfix . ":i:s");
+    
 
 
     
-        $stmt = $conn->prepare("INSERT INTO contacts (firstname, lastname, email, type , telephone , company) VALUES (?, ?, ?, ?, ? , ?)");
+        $stmt = $conn->prepare("INSERT INTO contacts (firstname, lastname, email, type , telephone , company , created_on) VALUES (?, ?, ?, ?, ? , ? ,?)");
     // Bind parameters to the prepared statement
     $stmt->bindParam(1, $firstname);
     $stmt->bindParam(2, $lastname);
@@ -19,6 +27,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $stmt->bindParam(4, $type);
     $stmt->bindParam(5, $telephone);
     $stmt->bindParam(6, $company);
+    $stmt->bindParam(7, $createdat);
+
 
 
     // Execute the statement
