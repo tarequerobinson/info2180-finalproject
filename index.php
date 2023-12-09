@@ -2,13 +2,6 @@
 
 session_start(); // Start the session
 
-// Check if the 'email' session variable is set
-if (!isset($_SESSION['email'])) {
-    // Redirect to the login page or another page
-    header("Location: login.php");
-    exit();
-}
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -27,7 +20,8 @@ if (!isset($_SESSION['email'])) {
 <body>
     <header>
         <img id=icon src="images/dolphin-logo.png" alt="A picture of a cartoon dolphin logo.">
-        <h1>Dolphin CRM <?= $_SESSION['email'] ?></h1>
+        <h1>Dolphin CRM </h1> 
+        <!--<?= $_SESSION['email'] ?>-->
     </header>
 
     <div id="loginPage"> </div>

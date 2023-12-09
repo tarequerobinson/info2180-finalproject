@@ -2,7 +2,7 @@
 include("../database/dbsetup.php");
 
 $id = isset($_GET['id']) ? $_GET['id'] : '';
-$user_id = $_SESSION['user_id'] ;
+/*$user_id = $_SESSION['user_id'] ;*/
 print_r($id);
 
 $stmt = $conn->prepare("SELECT * FROM contacts WHERE id = ?");
