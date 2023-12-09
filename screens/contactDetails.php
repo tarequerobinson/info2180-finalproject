@@ -15,7 +15,7 @@ if ($stmt) {
     // Check if the result is not empty
     if ($result) {
         // Output the result or use it as needed
-        print_r($result);
+        /*print_r($result);*/
     } else {
         echo "No contact found with the provided ID.";
     }
@@ -56,20 +56,16 @@ if ($notesStmt) {
 
 <body>
     <div id="contactDetailsHead">
-        <h1><i class="fa-solid fa-id-card-clip"></i> <?= $result['firstname'] ?> <?= $result['lastname'] ?> </h1>
-        <h1> <?= $result['firstname'] ?> <?= $result['lastname'] ?> </h1>
-        <p> Created On: <?= $result['created_on'] ?>  </p>
-        <p> Updated At: <?= $result['updated_at'] ?> </p>
+        
+        <div id="divA">
+            <h1><i class="fa-solid fa-id-card-clip"></i> <?= $result['firstname'] ?> <?= $result['lastname'] ?> </h1>
 
-
-        <?php
-        // Conditionally display buttons based on the user type
-        if ($result['type'] === "Support") {
-            echo '<button id = "switch">Switch to Sales</button>';
-        } elseif ($result['type'] === "Sales Lead") {
-            echo '<button id = "switch">Switch To Support</button>';
-        }
-
+            <div id="contactExtraInfo">
+                <p> <strong> Created On: </strong> <?= $result['created_on'] ?>  </p>
+                <p> <strong> Updated At: </strong> <?= $result['updated_at'] ?> </p>   
+            </div>    
+        </div>
+        
         <div id="contactHeadButtons">
             <button id = "Assign" class = "assign" >Assign to Me</button>
             <?php
