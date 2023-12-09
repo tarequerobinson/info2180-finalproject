@@ -42,6 +42,12 @@ if ($notesStmt) {
     // Handle the error if the query fails
     echo "Error: " . $conn->errorInfo()[2];
 }
+
+                // Fetch user details based on created_by value
+                $userStmt = $conn->prepare("SELECT firstname, lastname FROM contact_i WHERE id = ?");
+                $userStmt->execute($result['assigned_to']);
+                $userResult = $userStmt->fetch(PDO::FETCH_ASSOC);
+              
 ?>
 <!DOCTYPE html>
 <html lang="en">
