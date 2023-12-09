@@ -1,7 +1,7 @@
 <?php 
 include("dbsetup.php");
 date_default_timezone_set('America/Jamaica');
-$date= new DateTime('today');
+$date = new DateTime('today');
 ('d/m/Y');
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $email = isset($_POST['email']) ? $_POST['email'] : '';
     $role = isset($_POST['role']) ? $_POST['role'] : '';
     $password = isset($_POST['password']) ? $_POST['password'] : '';
-    $date = $date->format("Y-m-d") . " " . $date->format("H:i:s");
+    $createdat = $date->format("Y-m-d") . " " . $date->format("H:i:s");
 
     
     $stmt = $conn->prepare("INSERT INTO users (firstname, lastname, email, password , role, created_at) VALUES (?, ?, ?, ?, ?, ?)");
@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $stmt->bindParam(3, $email);
     $stmt->bindParam(4, $password);
     $stmt->bindParam(5, $role);
-    $stmt->bindParam(6, $date);
+    $stmt->bindParam(6, $createdat);
 
 
     // Execute the statement
