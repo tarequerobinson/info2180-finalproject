@@ -15,7 +15,7 @@ if ($stmt) {
     // Check if the result is not empty
     if ($result) {
         // Output the result or use it as needed
-        // print_r($result);
+        print_r($result);
     } else {
         echo "No contact found with the provided ID.";
     }
@@ -56,12 +56,16 @@ if ($notesStmt) {
 
     <div id="contactDetailsHead">
         <h1> <?= $result['firstname'] ?> <?= $result['lastname'] ?> </h1>
+        <p> Created On: <?= $result['created_on'] ?> <?= $result['updated_at'] ?> </p>
+        <p> Updated At: <?= $result['created_on'] ?> <?= $result['updated_at'] ?> </p>
+
+
         <?php
         // Conditionally display buttons based on the user type
         if ($result['type'] === "Support") {
-            echo '<button id = "switch">Switch to Support</button>';
+            echo '<button id = "switch">Switch to Sales</button>';
         } elseif ($result['type'] === "Sales Lead") {
-            echo '<button id = "switch">Switch To Sales Lead</button>';
+            echo '<button id = "switch">Switch To Support</button>';
         }
         ?>
     </div>
