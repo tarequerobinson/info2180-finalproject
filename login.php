@@ -1,5 +1,6 @@
 <?php 
-    include("../database/dbsetup.php");
+    include("database/dbsetup.php");
+
     ?>
 
 
@@ -15,7 +16,7 @@
     <div id="loginbody" class = "center">
         <h2>Login to Your Account</h2>      
 
-        <form action="" method="post">
+        <form action="index.php" method="post">
             <div class = "textField">
                 <input placeholder="Email address" type = "text" name ="email" required> 
             </div>	
@@ -37,6 +38,7 @@
 
 <?php
 
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     //used the $_POST superglobalto fetch the values of the email and password parameters passed in the url 
     $email = $_POST["email"];
@@ -57,14 +59,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $rowCount = $stmt->rowCount();
 
-    if ($rowCount > 0) {
-        // Login successful
-        echo json_encode(["status" => "success"]);
-        exit();
-    } else {
-        echo json_encode(["status" => "error", "message" => "Invalid username or password"]);
-        exit();
-    }
+
+session_start(); // Start the session
+
+// Assume you have checked the username and password
+if ($rowCount > 0) {
+    $_SESSION['email'] = $email; // Set the session variable
+    echo json_encode(["status" => "success"]);
+} else {
+    $_SESSION['email'] = ""; // Set the session variable
+
+    echo json_encode(["status" => "error", "message" => "Invalid username or password"]);
+}
 
 }
 
