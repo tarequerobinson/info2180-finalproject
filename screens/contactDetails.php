@@ -64,7 +64,10 @@ if ($notesStmt) {
         } elseif ($result['type'] === "Support") {
             echo '<button id = "SalesButton" class = "switch" >Switch To Sales Lead</button>';
         }
+
+        
         ?>
+        <button id = "Assign" class = "assign" >Assign to Me</button>
     </div>
 
     <div id="contactDetailsBody">
