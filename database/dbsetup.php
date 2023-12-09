@@ -1,6 +1,6 @@
 <?php
 $host = 'localhost';
-$port = '3307'; // Replace with your actual port number
+$port = '80'; // Replace with your actual port number
 $username = 'project2_user';
 $password = 'password123';
 $dbname = 'dolphincrm';

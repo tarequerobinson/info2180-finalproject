@@ -59,9 +59,9 @@ if ($notesStmt) {
         <h1> <?= $result['firstname'] ?> <?= $result['lastname'] ?> </h1>
         <?php
         // Conditionally display buttons based on the user type
-        if ($result['type'] === "Support") {
+        if ($result['type'] === "Sales Lead") {
             echo '<button id = "SupportButton" class = "switch" >Switch to Support</button>';
-        } elseif ($result['type'] === "Sales Lead") {
+        } elseif ($result['type'] === "Support") {
             echo '<button id = "SalesButton" class = "switch" >Switch To Sales Lead</button>';
         }
         ?>
