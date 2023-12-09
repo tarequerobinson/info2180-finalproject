@@ -108,8 +108,14 @@ if ($notesStmt) {
         <h1 id="NotesHead"><i class="fa-solid fa-pen-to-square"></i> Notes</h1>         
         <?php foreach ($notesResult as $row): ?>
             <div class="NotesComment">
+                <?php
+                // Fetch user details based on created_by value
+                $userStmt = $conn->prepare("SELECT firstname, lastname FROM users WHERE id = ?");
+                $userStmt->execute([$row['created_by']]);
+                $userResult = $userStmt->fetch(PDO::FETCH_ASSOC);
+                ?>
                 <i class="fa-solid fa-user"></i>
-                <div id="userfullname">Name Name</div>
+                <div id="userfullname"><?= $userResult['firstname'] . ' ' . $userResult['lastname'] ?></div>
                 <p><?= $row['comment'] ?></p>
                 <p id="commentdate">
                     <?= $row['created_at'] ?></p>  
@@ -142,9 +148,7 @@ if ($notesStmt) {
         event.preventDefault();
         alert('I AM RUNNING');
         console.log('Is the contentloading');
-        getUserbyID(<?= $id ?>);
-        getNoteUserbyID (<?= $notesResult['created_by'] ?>);
-        setDatesforEach(<?= $notesResult['created_at'] ?>);
+        
         currentDateInput = document.getElementById("created_at")
         const today = new Date();
 
