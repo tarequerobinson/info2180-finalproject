@@ -2,13 +2,6 @@
 
 session_start(); // Start the session
 
-// Check if the 'email' session variable is set
-// if (!isset($_SESSION['email'])) {
-//     // Redirect to the login page or another page
-//     header("Location: login.php");
-//     exit();
-// }
-
 ?>
 <!DOCTYPE html>
 <html lang="en">

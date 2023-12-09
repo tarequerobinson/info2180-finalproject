@@ -34,7 +34,7 @@ if(isset($_GET['id'])){
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
     if ($result){
-        echo "{$result['firstname']} {$result['lastname']} </p>";
+        echo "{$result['firstname']} {$result['lastname']} ";
     }else{
         echo "Assigned to no one";
     }

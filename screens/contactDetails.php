@@ -2,8 +2,8 @@
 include("../database/dbsetup.php");
 
 $id = isset($_GET['id']) ? $_GET['id'] : '';
-$user_id = $_SESSION['user_id'] ;
-// print_r($id);
+/*$user_id = $_SESSION['user_id']; 
+print_r($id);*/
 
 $stmt = $conn->prepare("SELECT * FROM contacts WHERE id = ?");
 $stmt->execute([$id]);
@@ -15,7 +15,7 @@ if ($stmt) {
     // Check if the result is not empty
     if ($result) {
         // Output the result or use it as needed
-        print_r($result);
+        /*print_r($result);*/
     } else {
         echo "No contact found with the provided ID.";
     }
@@ -49,62 +49,89 @@ if ($notesStmt) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Details</title>
+
     <script src="js/contactDetails.js"></script>
-    
+    <link rel="stylesheet" type= "text/css" href="css/contactDetails.css">
 </head>
 
 <body>
-
     <div id="contactDetailsHead">
-        <h1> <?= $result['firstname'] ?> <?= $result['lastname'] ?> </h1>
-        <p> Created On: <?= $result['created_on'] ?>  </p>
-        <p> Updated At: <?= $result['updated_at'] ?> </p>
-
-
-        <?php
-        // Conditionally display buttons based on the user type
-        if ($result['type'] === "Support") {
-            echo '<button id = "switch">Switch to Sales</button>';
-        } elseif ($result['type'] === "Sales Lead") {
-            echo '<button id = "switch">Switch To Support</button>';
-        }
-
         
-        ?>
-        <button id = "Assign" class = "assign" >Assign to Me</button>
+        <div id="divA">
+            <h1><i class="fa-solid fa-id-card-clip"></i> <?= $result['firstname'] ?> <?= $result['lastname'] ?> </h1>
+
+            <div id="contactExtraInfo">
+                <p> <strong> Created On: </strong> <?= $result['created_on'] ?>  </p>
+                <p> <strong> Updated At: </strong> <?= $result['updated_at'] ?> </p>   
+            </div>    
+        </div>
+        
+        <div id="contactHeadButtons">
+            <button id = "Assign" class = "assign" >Assign to Me</button>
+            <?php
+            // Conditionally display buttons based on the user type
+            if ($result['type'] === "Sales Lead") {
+                echo '<button id = "SupportButton" class = "switch" >Switch to Support</button>';
+            } elseif ($result['type'] === "Support") {
+                echo '<button id = "SalesButton" class = "switch" >Switch To Sales Lead</button>';
+            }        
+            ?>
+        </div>
     </div>
 
     <div id="contactDetailsBody">
-        Email: <?= $result['email'] ?>
-        Telephone: <?= $result['telephone'] ?>
-        Company: <?= $result['company'] ?>
-        <div id="assignedTo"></div>
-    </div>
-
-    <div id="NotesBody">
-        <?php foreach ($notesResult as $row): ?>
-            <!-- <div id=C>header for user working on function</h3> -->
-            
-            <p><strong><?= $row['created_by'] ?> </strong></p>
-            <p><strong><?= $row['comment'] ?> </strong></p>
-            <p><?= $row['created_at'] ?></p>
-            
-        <?php endforeach; ?>
-    </div>
-
-    <form action="database/notesConnect.php" method="post">
-        <input type="hidden" name="contact_id" id="contactId" value="<?= $id ?>">
-        <input type="hidden" name="created_by" id="createdBy" value="<?= $user_id ?>">
-        <input type="hidden" name="created_at" id="created_at" value="">
-
-        
-        <h1>Add a note about <?= $result['firstname'] ?></h1>
-        <textarea id="comment" name="comment" placeholder="Enter details here"></textarea>
-        <br>
-        <div id='savectrl'>
-            <button type="submit" id="save">Save</button>
+        <div id="div1">
+            <div class="detailsrow">
+                <h4>Email:</h4>
+                <?= $result['email'] ?>
+            </div>
+            <div class="detailsrow">
+                <h4>Company:</h4>
+                <?= $result['company'] ?>
+            </div>
         </div>
-    </form>
+        <div id="div2">
+            <div class="detailsrow">
+                <h4>Telephone:</h4>
+                <?= $result['telephone'] ?>
+            </div>
+            <div class="detailsrow">
+                <h4>Assigned To:</h4>
+                <div id="assignedTo">
+                    Name
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="NotesBody">    
+        <h1 id="NotesHead"><i class="fa-solid fa-pen-to-square"></i> Notes</h1>         
+        <?php foreach ($notesResult as $row): ?>
+            <div class="NotesComment">
+                <i class="fa-solid fa-user"></i>
+                <div id="userfullname">Name Name</div>
+                <p><?= $row['comment'] ?></p>
+                <p id="commentdate">
+                    <?= $row['created_at'] ?></p>  
+            </div>        
+        <?php endforeach; ?>        
+    </div>
+    
+    <div id="NotesEntry">
+        <form action="database/notesConnect.php" method="post">
+            <input type="hidden" name="contact_id" id="contactId" value="<?= $id ?>">
+            <input type="hidden" name="created_by" id="createdBy" value="<?= $user_id ?>">
+            <input type="hidden" name="created_at" id="created_at" value="">
+
+            
+            <h1>Add a note about <?= $result['firstname'] ?></h1>
+            <textarea id="comment" name="comment" required placeholder="Enter note here..."></textarea>
+            
+            <div id='savectrl'>
+                <button type="submit" id="save">Post Note</button>
+            </div>
+        </form>
+    </div>
 
 </body>
 </html>
@@ -116,7 +143,7 @@ if ($notesStmt) {
         alert('I AM RUNNING');
         console.log('Is the contentloading');
         getUserbyID(<?= $id ?>);
-        getNoteUserbyID (<?= $id ?>);
+        getNoteUserbyID (<?= $notesResult['created_by'] ?>);
         setDatesforEach(<?= $notesResult['created_at'] ?>);
         currentDateInput = document.getElementById("created_at")
         const today = new Date();

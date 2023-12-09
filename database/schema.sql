@@ -67,7 +67,6 @@ VALUES
     ('Jackson', 'Baker', 'Creative Minds', 'Sales Lead', 49, 50,'2023-12-02' ,'2023-12-21', '555-5432', 'jackson.baker@example.com'),
     ('Jack', 'Bake', 'Creative Minds', 'Support', 49, 50,'2023-12-02' ,'2023-12-21', '555-5432', 'jack.baker@example.com');
 
-
 --
 -- Table structure for table `notes`
 --
@@ -87,10 +86,10 @@ CREATE TABLE `notes` (
 --
 
 INSERT INTO `notes` (`contact_id`, `comment`, `created_by`, `created_at`) VALUES
-(4080, 'This is a sample note for contact 1.', 1, '2023-12-01 10:15:00'),
-(4080, 'A note about contact 2.', 2, '2023-12-02 12:30:00'),
-(4081, 'Reminder for contact 3.', 3, '2023-12-03 15::00'),
-(4084, 'Additional note for contact 1.', 4, '2023-12-04 08:00:00'),
-(4080, 'Important information for contact 2.', 1, '2023-12-05 09:30:00'),
-(4082, 'Follow-up task for contact 3.', 3, '2023-12-06 11:45:00');
+(4080, 'This is a sample note for contact 1.', 4081, '2023-12-01 10:15:00'),
+(4080, 'A note about contact 2.', 4082, '2023-12-02 12:30:00'),
+(4081, 'Reminder for contact 3.', 4083, '2023-12-03 15::00'),
+(4084, 'Additional note for contact 1.', 4084, '2023-12-04 08:00:00'),
+(4080, 'Important information for contact 2.', 4081, '2023-12-05 09:30:00'),
+(4082, 'Follow-up task for contact 3.', 4083, '2023-12-06 11:45:00');
 
