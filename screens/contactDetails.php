@@ -83,7 +83,9 @@ if ($notesStmt) {
 
     <div id="NotesBody">
         <?php foreach ($notesResult as $row): ?>
-            <div id=C>header for user working on function</h3>
+            <!-- <div id=C>header for user working on function</h3> -->
+            
+            <p><strong><?= $row['created_by'] ?> </strong></p>
             <p><strong><?= $row['comment'] ?> </strong></p>
             <p><?= $row['created_at'] ?></p>
             
