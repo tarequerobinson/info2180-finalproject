@@ -49,7 +49,7 @@ if ($notesStmt) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Details</title>
-    <script src = js/contactDetails.js></script>
+    <script src = "js/contactDetails.js"></script>
 
 </head>
 
@@ -87,7 +87,7 @@ if ($notesStmt) {
     <br>
 
     <div id='savectrl'> 
-                <button type="submit" id="save">Save</button>
+        <button type="submit" id="save">Save</button>
     </div>
 </form>
 
