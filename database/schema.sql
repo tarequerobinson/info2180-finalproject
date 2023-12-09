@@ -67,7 +67,6 @@ VALUES
     ('Jackson', 'Baker', 'Creative Minds', 'Sales Lead', 49, 50,'2023-12-02' ,'2023-12-21', '555-5432', 'jackson.baker@example.com'),
     ('Jack', 'Bake', 'Creative Minds', 'Support', 49, 50,'2023-12-02' ,'2023-12-21', '555-5432', 'jack.baker@example.com');
 
-
 --
 -- Table structure for table `notes`
 --
