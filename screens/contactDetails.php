@@ -114,7 +114,7 @@ if ($notesStmt) {
         alert('I AM RUNNING');
         console.log('Is the contentloading');
         getUserbyID(<?= $id ?>);
-        getNoteUserbyID (<?= $id ?>);
+        getNoteUserbyID (<?= $notesResult['created_by'] ?>);
         setDatesforEach(<?= $notesResult['created_at'] ?>);
         currentDateInput = document.getElementById("created_at")
         const today = new Date();
