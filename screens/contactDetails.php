@@ -59,7 +59,6 @@ if ($notesStmt) {
 
 </div>
 
-
     <div id="contactDetailsBody">
         Email: <?= $result['email'] ?>
         Telephone: <?= $result['telephone'] ?>

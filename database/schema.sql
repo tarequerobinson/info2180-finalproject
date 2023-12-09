@@ -76,7 +76,7 @@ CREATE TABLE `notes` (
   `contact_id` int(11) NOT NULL,
   `comment` text NOT NULL,
   `created_by` int(11) NOT NULL,
- `created_at` DATE NOT NULL DEFAULT '0000-00-00' '',
+  `created_at` DATE NOT NULL DEFAULT '0000-00-00' '',
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=4080 DEFAULT CHARSET=utf8mb4;
 
