@@ -6,21 +6,11 @@ function getUserbyID(id) {
     xhr.open("GET", url, true);
 
     xhr.onreadystatechange = function () {
-<<<<<<< HEAD
-        if (xhr.readyState === 4 && xhr.status === 200) {
-            document.getElementById("assignedTo").innerHTML = `Assigned to: ` + xhr.responseText;
-        } else {
-            console.log('poopie')
-        }
-    };
-
-=======
         console.log('onreadystatechange:', xhr.readyState, xhr.status);
         if (xhr.readyState === 4 && xhr.status === 200) {
             document.getElementById("assignedTo").innerHTML = `Assigned to: ` + xhr.responseText;
         }
     };
->>>>>>> f23a694f1177b8cb1b21921f45a603ca8a0f7316
 
     xhr.send();
 }
