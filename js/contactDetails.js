@@ -43,6 +43,15 @@ function setDatesforEach(date){
             document.getElementById('formattedDate').innerText = formattedDate;
 }
 
-document.getElementById("switch").addEventListener('click', function(){
-    
+document.getElementsByClassName("switch").addEventListener('click', function(){
+    var switchbutton = document.getElementByClass("switch")
+
+    if (switchbutton.id == "SupportButton"){
+        switchbutton.id = "SalesButton"
+        switchbutton.innerHTML= "Switch to Support"
+
+    }else{
+        switchbutton.id = "SupportButton";
+        switchbutton.innerHTML= "Switch To Sales Lead"
+    }
 })

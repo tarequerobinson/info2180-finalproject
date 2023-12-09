@@ -20,8 +20,8 @@ session_start(); // Start the session
 <body>
     <header>
         <img id=icon src="images/dolphin-logo.png" alt="A picture of a cartoon dolphin logo.">
-        <h1>Dolphin CRM </h1> 
-        <!--<?= $_SESSION['email'] ?>-->
+        <h1>Dolphin CRM </h1>
+        <!-- <?= $_SESSION['email'] ?> -->
     </header>
 
     <div id="loginPage"> </div>
