@@ -28,7 +28,7 @@ $notesStmt->execute([$id]);
 
 // Check if the query was successful
 if ($notesStmt) {
-    $notesResult = $stmt->fetch(PDO::FETCH_ASSOC);
+    $notesResult = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     // Check if the result is not empty
     if ($notesResult) {
@@ -50,14 +50,15 @@ if ($notesStmt) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Details</title>
 </head>
+
 <body>
 
-<div id="contactDetailsHead">
-    <h1> <?= $result['firstname'] ?> <?= $result['lastname'] ?> </h1>
-    <button>Assign TO</button>
-    <button>Assign TO</button>
+    <div id="contactDetailsHead">
+        <h1> <?= $result['firstname'] ?> <?= $result['lastname'] ?> </h1>
+        <button>Assign To Me</button>
+        <button>Switch To Sales Lead</button>
 
-</div>
+    </div>
 
     <div id="contactDetailsBody">
         Email: <?= $result['email'] ?>
