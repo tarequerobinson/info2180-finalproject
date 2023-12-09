@@ -17,4 +17,18 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // Execute the statement
     $stmt->execute();
 }
+
+if(isset($_GET['id'])){
+    $id = $_GET['id'];
+    $stmt = $conn->prepare("SELECT firstname, lastname FROM users WHERE id = ?");
+    $stmt->execute([$id]);
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    if ($result){
+        echo "{$result['firstname']} {$result['lastname']} </p>";
+    }else{
+        echo "Assigned to no one";
+    }
+}
+
 ?>
