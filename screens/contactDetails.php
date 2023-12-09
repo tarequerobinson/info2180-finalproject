@@ -48,11 +48,10 @@ if ($notesStmt) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Details</title>
-    <script src="js/contactDetails.js"></script>
+    <script src="../js/contactDetails.js"></script>
 </head>
 
 <body>
-
     <div id="contactDetailsHead">
         <h1> <?= $result['firstname'] ?> <?= $result['lastname'] ?> </h1>
         <button>Assign To Me</button>
@@ -74,16 +73,20 @@ if ($notesStmt) {
     <?php endforeach; ?>
 </div>
 
-<div id="NotesEntry" m>
-    <h1>Add a note about <?= $result['firstname'] ?></h1>
-    <textarea id="comment" name="comment" placeholder="Enter details here"></textarea>
-    <br>
-    <button type="submit" id="save">Save</button>    
+<div id="NotesEntry">
+        <h1>Add a note about <?= $result['firstname'] ?></h1>
+        <textarea id="comment" name="comment" placeholder="Enter details here"></textarea>
+        <br>
+        <button  id="save">Save</button>    
 </div>
 
 </body>
 </html>
 <script>
+    document.querySelector("#newNotesForm button").addEventListener('click', () => {
+        <?= $id ?>
+    });
+
     document.addEventListener('DOMContentLoaded', () => {
         console.log('poopie')
         getUserbyID(<?= $id ?>);

@@ -10,12 +10,12 @@ function getUserbyID(id){
     xhr.open("GET", url, true);
 
     xhr.onreadystatechange = function () {
-    if (xhr.readyState === 4 && xhr.status === 200) {
-        document.getElementById("assignedTo").innerHTML = `Assigned to: ` + xhr.responseText;
-    } else {
-        console.log('poopie')
-    }
-};
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            document.getElementById("assignedTo").innerHTML = `Assigned to: ` + xhr.responseText;
+        } else {
+            console.log('poopie')
+        }
+    };
 
 
     xhr.send();
