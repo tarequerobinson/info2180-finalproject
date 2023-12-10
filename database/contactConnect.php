@@ -7,18 +7,20 @@ $date = new DateTime();
 
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-        $assigned_to = isset($_POST['assigned']) ? $_POST['assigned'] : '';
+        $assigned_to = isset($_POST['assigned']) ? htmlspecialchars($_POST['assigned']) : '';
 
-        $title = isset($_POST['title']) ? $_POST['title'] : '';
-        $firstname =  isset($_POST['firstname']) ? $_POST['firstname'] : '';
-        $lastname = isset($_POST['lastname']) ? $_POST['lastname'] : '';
-        $email = isset($_POST['email']) ? $_POST['email'] : '';
-        $type = isset($_POST['type']) ? $_POST['type'] : '';
-        $telephone = isset($_POST['telephone']) ? $_POST['telephone'] : '';
-        $company = isset($_POST['company']) ? $_POST['company'] : '';
+        $title = isset($_POST['title']) ? htmlspecialchars($_POST['title']) : '';
         $hrfix = intval($date->format("H")) - 1;
         $createdat = $date->format("Y-m-d") . " " . $date->format($hrfix . ":i:s");
-    
+
+
+        $firstname = isset($_POST['firstname']) ? htmlspecialchars($_POST['firstname']) : '';
+        $lastname = isset($_POST['lastname']) ? htmlspecialchars($_POST['lastname']) : '';
+        $type = isset($_POST['type']) ? htmlspecialchars($_POST['type']) : '';
+        $company = isset($_POST['company']) ? htmlspecialchars($_POST['company']) : '';
+        $email = isset($_POST['email']) ? htmlspecialchars($_POST['email']) : '';
+        $telephone = isset($_POST['telephone']) ? htmlspecialchars($_POST['telephone']) : '';
+
 
 
     

@@ -6,9 +6,9 @@ $date = new DateTime();
 
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $contactId = isset($_POST['contact_id']) ? $_POST['contact_id'] : '';
-    $comment = isset($_POST['comment']) ? $_POST['comment'] : '';
-    $createdBy = isset($_POST['created_by']) ? $_POST['created_by'] : '';
+    $contactId = isset($_POST['contact_id']) ? htmlspecialchars($_POST['contact_id']): '';
+    $comment = isset($_POST['comment']) ? htmlspecialchars($_POST['comment']) : '';
+    $createdBy = isset($_POST['created_by']) ? htmlspecialchars($_POST['created_by']) : '';
     $hrfix = intval($date->format("H")) - 1;
     $createdat = $date->format("Y-m-d") . " " . $date->format($hrfix . ":i:s");
 
