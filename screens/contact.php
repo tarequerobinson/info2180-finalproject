@@ -8,6 +8,15 @@
         die("Error: " . $conn->error);
     }    
 
+
+    $sqlUsers = "SELECT * FROM users";
+    $allUsers = $conn->query($sqlUsers); 
+
+    if (!$allUsers) {
+        die("Error: " . $conn->error);
+    }    
+
+
 ?>
 
 
@@ -100,7 +109,10 @@
             <div class="formselect" id="divassign">
                 <label for="title">Assigned To</label>
                 <select name="assigned" id="assigned">
-                    <option value="user">Fname Lname</option>      
+
+                <?php foreach ($allUsers as $user): ?>
+                    <option value="<?= $user['id'] ?>"><?php echo $user['firstname'] . ' ' . $user['lastname']; ?></option>
+                <?php endforeach; ?>
                 </select>
             </div>
 

@@ -7,6 +7,8 @@ $date = new DateTime();
 
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
+        $assigned_to = isset($_POST['assigned']) ? $_POST['assigned'] : '';
+
         $title = isset($_POST['title']) ? $_POST['title'] : '';
         $firstname =  isset($_POST['firstname']) ? $_POST['firstname'] : '';
         $lastname = isset($_POST['lastname']) ? $_POST['lastname'] : '';
@@ -20,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 
     
-        $stmt = $conn->prepare("INSERT INTO contacts (firstname, lastname, email, type , telephone , company , created_on , title) VALUES (? , ? , ?, ?, ?, ? , ? ,?)");
+        $stmt = $conn->prepare("INSERT INTO contacts (firstname, lastname, email, type , telephone , company , created_on , title , assigned_to) VALUES (? , ? , ?, ?, ?, ? , ? ,? , ?)");
     // Bind parameters to the prepared statement
     $stmt->bindParam(1, $firstname);
     $stmt->bindParam(2, $lastname);
@@ -30,6 +32,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $stmt->bindParam(6, $company);
     $stmt->bindParam(7, $createdat);
     $stmt->bindParam(8, $title);
+    $stmt->bindParam(9, $assigned_to);
+
 
     
 
