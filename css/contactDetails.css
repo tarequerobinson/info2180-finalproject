@@ -93,6 +93,7 @@
 	border:  1.5px solid rgba(37, 90, 154, 0.591);
     margin-top: 20px;
     width: 71.5vw;
+    min-height: 150px;
     padding: 23px;
 }
 
@@ -118,27 +119,31 @@
     box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
     border-radius: 3px;    
     margin-bottom: 13px;
-    padding: 13px;
-    padding-left: 16px;
+    padding: 15px;
+    padding-left: 21px;
 }
 
+#NotesBody #noNotes{  
+    margin-left: 5px;
+}
 
 #NotesBody .NotesComment #userfullname{
 	display: inline;
     font-weight: bold;    
     font-size: 14.5px;  
-    margin-left: 3px;
+    margin-left: 4px;
 }
 
 #NotesBody .NotesComment p{  
-    margin-top: 5px;   
+    margin-top: 8px;   
     font-size: 14px;  
+    margin-top: 6px; 
 }
 
 #NotesBody .NotesComment #commentdate{  
     margin-top: 5px; 
     font-size: 13.5px;      
-    color: rgba(19, 40, 66, 0.854);
+    color: rgba(19, 40, 66, 0.854);  
 }
 
 #NotesEntry{

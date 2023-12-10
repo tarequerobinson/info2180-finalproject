@@ -17,7 +17,7 @@ if ($stmt) {
         // Output the result or use it as needed
         /*print_r($result);*/
     } else {
-        echo "No contact found with the provided ID.";
+        $result = "No contact found with the provided ID.";
     }
 } else {
     // Handle the error if the query fails
@@ -36,7 +36,7 @@ if ($notesStmt) {
         // Output the result or use it as needed
         // print_r($notesResult);
     } else {
-        echo "No notes found with the provided ID.";
+        $notesResult = "No notes found with the provided ID.";
     }
 } else {
     // Handle the error if the query fails
@@ -106,15 +106,20 @@ if ($notesStmt) {
 
     <div id="NotesBody">    
         <h1 id="NotesHead"><i class="fa-solid fa-pen-to-square"></i> Notes</h1>         
-        <?php foreach ($notesResult as $row): ?>
-            <div class="NotesComment">
-                <i class="fa-solid fa-user"></i>
-                <div id="userfullname">Name Name</div>
-                <p><?= $row['comment'] ?></p>
-                <p id="commentdate">
-                    <?= $row['created_at'] ?></p>  
-            </div>        
-        <?php endforeach; ?>        
+            <?php if ($notesResult === "No notes found with the provided ID.") { ?>
+                <p id="noNotes"><?= $result['firstname'] ?> has no notes yet.</p>              
+            
+            <?php } else { ?>          
+                <?php foreach ($notesResult as $row): ?>
+                    <div class="NotesComment">
+                    <i class="fa-solid fa-user"></i>
+                    <div id="userfullname">Name Name</div>
+                    <p><?= $row['comment'] ?></p>
+                    <p id="commentdate">
+                        <?= $row['created_at'] ?></p>  
+                    </div> 
+                <?php endforeach; ?> 
+            <?php } ?>                  
     </div>
     
     <div id="NotesEntry">
@@ -124,7 +129,7 @@ if ($notesStmt) {
             <input type="hidden" name="created_at" id="created_at" value="">
 
             
-            <h1>Add a note about <?= $result['firstname'] ?></h1>
+            <h1>Add a note about <?= $result['firstname'] ?>: </h1>
             <textarea id="comment" name="comment" required placeholder="Enter note here..."></textarea>
             
             <div id='savectrl'>
