@@ -128,7 +128,13 @@ if ($notesStmt) {
                     <div class="NotesComment">
                         <!-- Fetch user details based on created_by value -->
                         <i class="fa-solid fa-user"></i>
-                        <div id="userfullname"><?= $userResult['firstname'] . ' ' . $userResult['lastname'] ?></div>
+                        <div id="userfullname">
+                            <?php if($userResult) : ?>
+                                <?= $userResult['firstname'] . ' ' . $userResult['lastname'] ?>
+                            <?php else : ?>    
+                                <?= "None" ?>
+                            <?php endif; ?>
+                        </div>
                         <p><?= $row['comment'] ?></p>
                         <p id="commentdate">
                             <?php 
