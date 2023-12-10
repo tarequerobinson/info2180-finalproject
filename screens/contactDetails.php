@@ -78,13 +78,13 @@ if ($notesStmt) {
         </div>
         
         <div id="contactHeadButtons">
-            <button id = "Assign" class = "assign" >Assign to Me</button>
+            <button id = "Assign" class = "assign" > <i id="hand" class="fa-solid fa-hand-pointer"></i> Assign to Me</button>
             <?php
             // Conditionally display buttons based on the user type
             if ($result['type'] === "Sales Lead") {
-                echo '<button id = "SupportButton" class = "switch" >Switch To Support</button>';
+                echo '<button id = "SupportButton" class = "switch"> <i id="flip" class="fa-solid fa-repeat"></i> Switch To Support</button>';
             } elseif ($result['type'] === "Support") {
-                echo '<button id = "SalesButton" class = "switch" >Switch To Sales Lead</button>';
+                echo '<button id = "SalesButton" class = "switch"> <i id="flip" class="fa-solid fa-repeat"></i> Switch To Sales Lead</button>';
             }        
             ?>
         </div>

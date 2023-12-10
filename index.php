@@ -24,10 +24,11 @@ if(!isset($_SESSION['user_id'])) {
 
 <body>
     <header>
-        <img id=icon src="images/dolphin-logo.png" alt="A picture of a cartoon dolphin logo.">
-        <h1>Dolphin CRM </h1> 
-        <p> Welcome <?= $_SESSION['firstname'] ?> ! </p>
-
+        <div id= divA>
+            <img id=icon src="images/dolphin-logo.png" alt="A picture of a cartoon dolphin logo.">
+            <h1>Dolphin CRM </h1> 
+        </div>
+        <h1 id=welcome> Welcome Back, <?= $_SESSION['firstname'] ?>! </h1> 
     </header>
 
     <div id="loginPage"> </div>

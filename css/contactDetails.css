@@ -24,7 +24,6 @@
 
 #contactDetailsHead #divA{
     display: flex;
-    display: flex;
     align-items: space-between;
     flex-direction: column;
 }
@@ -43,6 +42,10 @@
 
 #contactHeadButtons{
     margin-top: 15px;
+}
+
+#contactHeadButtons button #hand, #contactHeadButtons button #flip{
+    padding-right: 4px;
 }
 
 #contactHeadButtons button{
