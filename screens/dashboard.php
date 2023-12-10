@@ -42,8 +42,15 @@
                 <tr>
                     <td><strong><?= $row['firstname'] ?> <?= $row['lastname'] ?></strong></td>
                     <td><?= $row['email'] ?></td>
-                    <td><?= $row['company'] ?></td>
-                    <td class="contacttype"><?= $row['type'] ?></td>
+                    <td><?= $row['company'] ?></td>                    
+                                       
+                    <td class="contacttype">
+                        <?php if($row['type'] === "Support") : ?>                            
+                            <div id=support><?=$row['type']?></div> 
+                        <?php else : ?>    
+                            <div id=saleslead><?=$row['type']?></div> 
+                        <?php endif; ?>
+                    </td>
                     <td><button type="submit" id="contactDetailsLink" onclick="loadContactDetails('contactDetails' , <?= $row['id'] ?>)" >View</button></td>
                 </tr>
             <?php endforeach; ?>
