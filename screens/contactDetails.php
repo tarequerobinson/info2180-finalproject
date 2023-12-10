@@ -5,6 +5,8 @@ $id = isset($_GET['id']) ? $_GET['id'] : '';
 /*$user_id = $_SESSION['user_id']; 
 print_r($id);*/
 
+
+
 $stmt = $conn->prepare("SELECT * FROM contacts WHERE id = ?");
 $stmt->execute([$id]);
 
@@ -129,7 +131,12 @@ if ($notesStmt) {
                         <div id="userfullname"><?= $userResult['firstname'] . ' ' . $userResult['lastname'] ?></div>
                         <p><?= $row['comment'] ?></p>
                         <p id="commentdate">
-                        <?= $row['created_at'] ?></p>  
+                        <?php 
+                    $noteCreatedDate = new DateTime($row['created_at']);
+                    echo $noteCreatedDate->format('l, F j, Y g:i A');
+                    ?>
+                        
+                    </p>  
                     </div> 
                 <?php endforeach; ?> 
             <?php } ?>                  
