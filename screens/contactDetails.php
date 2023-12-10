@@ -77,15 +77,15 @@ if ($notesStmt) {
         </div>
         
         <div id="contactHeadButtons">
-            <button id = "Assign" class = "assign" onclick="Print()"> 
+            <button id = "Assign" class = "assign" onclick=""> 
                 <i id="hand" class="fa-solid fa-hand-pointer"></i> 
                 Assign to Me</button>
             <?php
             // Conditionally display buttons based on the user type
             if ($result['type'] === "Sales Lead") {
-                echo '<button id = "SupportButton" class = "switch"> <i id="flip" class="fa-solid fa-repeat"></i> Switch To Support</button>';
+                echo "<button id = 'SupportButton' class = 'switch' onclick='Print({$result['id']})'> <i id='flip' class='fa-solid fa-repeat'></i> Switch To Support</button>";
             } elseif ($result['type'] === "Support") {
-                echo '<button id = "SalesButton" class = "switch"> <i id="flip" class="fa-solid fa-repeat"></i> Switch To Sales Lead</button>';
+                echo "<button id = 'SalesButton' class = 'switch' onclick='Print({$result['id']})'> <i id='flip' class='fa-solid fa-repeat'></i> Switch To Sales Lead</button>";
             }        
             ?>
         </div>
@@ -186,38 +186,7 @@ if ($notesStmt) {
 
 
     switchButton.addEventListener("click" , function () {
-                // Send an asynchronous request to update the contact type
-                const contactId = <?php $result["id"] ?>; // Replace with the actual contact ID
-        var newType ;
-        
-        if (switchButton.innerHTML  == "Switch To Sales Lead" ){
-            newType = "Sales Lead";
-        }
-        else if (switchButton.innerHTML  == "Switch To Support" )  {
-            newType = "Support";
-
-        };
-
-        // Using Fetch API for simplicity
-        fetch("updateContactType.php", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/x-www-form-urlencoded",
-            },
-            body: `contactId=${contactId}&newType=${newType}`,
-        })
-            .then(response => response.json())
-            .then(data => {
-                if (data.success) {
-                    console.log("Contact type updated successfully");
-                } else {
-                    console.error("Error updating contact type");
-                }
-            })
-            .catch(error => {
-                console.error("Error:", error);
-            });
-
+               
 
     })
     });
