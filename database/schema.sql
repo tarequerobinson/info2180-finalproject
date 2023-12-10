@@ -7,25 +7,26 @@ USE dolphincrm;
 --
 
 DROP TABLE IF EXISTS `users`;
+
 CREATE TABLE `users` (
   `id` int(11) NOT NULL auto_increment,
   `firstname` varchar(35) NOT NULL,
-  `lastname` varchar(35) NOT NULL ,
+  `lastname` varchar(35) NOT NULL,
   `role` varchar(35) NOT NULL,
-  `created_at`  DATETIME NOT NULL ,
-  `password` varchar(35) NOT NULL ,
-  `email` varchar(35) NOT NULL ,
-   PRIMARY KEY  (`id`)
+  `created_at` DATETIME NOT NULL,
+  `password` varchar(255) NOT NULL, 
+  `email` varchar(35) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=4080 DEFAULT CHARSET=utf8mb4;
 
 
 
 INSERT INTO `users` (`firstname`, `lastname`, `role`, `created_at`, `password`, `email`) VALUES
-( 'John', 'Doe', 'admin', '2021-09-16 10:30:00', 'johndoe', 'john.doe@example.com'),
-( 'Jane', 'Smith', 'user', '2021-09-16 11:30:00', 'janesmith', 'jane.smith@example.com'),
-('Sam', 'Johnson', 'user', '2021-09-16 12:30:00', 'samjohnson', 'sam.johnson@example.com'),
-('Sarah', 'Williams', 'user', '2021-09-16 13:30:00', 'sarahwilliams', 'sarah.williams@example.com'),
-( 'Michael', 'Brown', 'user', '2021-09-16 14:30:00', 'michaelbrown', 'michael.brown@example.com');
+( 'John', 'Doe', 'admin', '2021-09-16 10:30:00', '$2y$10$ihlHAvXlLn3CDLqy4cZQwOQdsLTuSFY2VRYOcdPpc2ZyLK4B4pMja', 'john.doe@example.com'),
+( 'Jane', 'Smith', 'user', '2021-09-16 11:30:00', '$2y$10$ywZsP0Cy23j0V0mjjLzBnu7NegMmJS8o/SwajQ7LfXsfbDztKXPCy', 'jane.smith@example.com'),
+('Sam', 'Johnson', 'user', '2021-09-16 12:30:00', '$2y$10$76Nf9YI9QT1kLJVUfRfATueogOSaC313SoonY.DujAogwhXqNVlia', 'sam.johnson@example.com'),
+('Sarah', 'Williams', 'user', '2021-09-16 13:30:00', '$2y$10$MfyxDYH5QQ4GtH0P0MIuhe.j98pji3pb.SNLuoJsroo1/CT4Wp0.2', 'sarah.williams@example.com');
+
 
 
 

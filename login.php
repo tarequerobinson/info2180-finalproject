@@ -16,7 +16,7 @@
     <div id="loginbody" class = "center">
         <h2>Login to Your Account</h2>      
 
-        <form action="index.php" method="post">
+        <form  method="post">
             <div class = "textField">
                 <input placeholder="Email address" type = "text" name ="email" required> 
             </div>	
@@ -39,6 +39,10 @@
 <?php
 
 
+
+
+session_start();
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     //used the $_POST superglobalto fetch the values of the email and password parameters passed in the url 
     $email = $_POST["email"];
@@ -46,26 +50,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Validate user credentials
     //basic authentication we are checkking what is enetered inside the input fields exist in the users table 
-    $sql = "SELECT * FROM users WHERE email=:email AND password=:password";
+    $sql = "SELECT * FROM users WHERE email=:email";
     $stmt = $conn->prepare($sql);
     //wherever ':email' is in the sql statement replace it with the value of the $email variable
     $stmt->bindParam(':email', $email);
 
     //wherever ':password' is in the sql statement replace it with the value of the $password variable
-    $stmt->bindParam(':password', $password);
+  
     $stmt->execute();
 
     //this prevents users from directly injecting any sql queries using the input fields provided on the front end 
+    $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
     $rowCount = $stmt->rowCount();
 
 
-session_start(); // Start the session
+ // Start the session
 
 // Assume you have checked the username and password
-if ($rowCount > 0) {
-    $_SESSION['email'] = $email; // Set the session variable
-    echo json_encode(["status" => "success"]);
+if ($user && password_verify($password, $user['password'])) {
+    $_SESSION['email'] = $email;
+    $_SESSION['user_id'] = $user['id']; // Set the session variable
+    header("Location: index.php");
+    exit();
 } else {
     $_SESSION['email'] = ""; // Set the session variable
 
