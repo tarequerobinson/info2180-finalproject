@@ -108,7 +108,11 @@ if ($notesStmt) {
             <div class="detailsrow">
                 <h4>Assigned To:</h4>
                 <div id="assignedTo">
-                <?= $userResult['firstname'] . ' ' . $userResult['lastname'] ?>
+                    <?php if($userResult) : ?>
+                        <?= $userResult['firstname'] . ' ' . $userResult['lastname'] ?>
+                    <?php else : ?>    
+                        <?= "None" ?>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>
@@ -130,15 +134,20 @@ if ($notesStmt) {
                         ?>
                         <!-- Fetch user details based on created_by value -->
                         <i class="fa-solid fa-user"></i>
-                        <div id="userfullname"><?= $userResult1['firstname'] . ' ' . $userResult1['lastname'] ?></div>
+                        <div id="userfullname">
+                            <?php if($userResult) : ?>
+                                <?= $userResult1['firstname'] . ' ' . $userResult1['lastname'] ?>
+                            <?php else : ?>    
+                                <?= "None" ?>
+                            <?php endif; ?>
+                        </div>
                         <p><?= $row['comment'] ?></p>
                         <p id="commentdate">
-                        <?php 
-                    $noteCreatedDate = new DateTime($row['created_at']);
-                    echo $noteCreatedDate->format('l, F j, Y g:i A');
-                    ?>
-                        
-                    </p>  
+                            <?php 
+                            $noteCreatedDate = new DateTime($row['created_at']);
+                            echo $noteCreatedDate->format('l, F j, Y g:i A');
+                            ?>
+                        </p>  
                     </div> 
                 <?php endforeach; ?> 
             <?php } ?>                  
