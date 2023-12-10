@@ -119,7 +119,8 @@ if ($notesStmt) {
             
             <?php } else { ?>          
                 <?php foreach ($notesResult as $row): ?>
-                    <div class="NotesComment">                        
+                    <div class="NotesComment">
+                        <!-- Fetch user details based on created_by value -->
                         <i class="fa-solid fa-user"></i>
                         <div id="userfullname"><?= $userResult['firstname'] . ' ' . $userResult['lastname'] ?></div>
                         <p><?= $row['comment'] ?></p>

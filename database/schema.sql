@@ -9,12 +9,12 @@ USE dolphincrm;
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
   `id` int(11) NOT NULL auto_increment,
-  `firstname` varchar(35) NOT NULL default '',
-  `lastname` varchar(35) NOT NULL default '',
-  `role` varchar(35) NOT NULL default '',
-  `created_at`  DATETIME NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `password` varchar(35) NOT NULL default '',
-  `email` varchar(35) NOT NULL default '',
+  `firstname` varchar(35) NOT NULL,
+  `lastname` varchar(35) NOT NULL ,
+  `role` varchar(35) NOT NULL,
+  `created_at`  DATETIME NOT NULL ,
+  `password` varchar(35) NOT NULL ,
+  `email` varchar(35) NOT NULL ,
    PRIMARY KEY  (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=4080 DEFAULT CHARSET=utf8mb4;
 
@@ -32,16 +32,16 @@ INSERT INTO `users` (`firstname`, `lastname`, `role`, `created_at`, `password`, 
 DROP TABLE IF EXISTS `contacts`;
 CREATE TABLE `contacts` (
   `id` int(11) NOT NULL auto_increment,
-  `firstname` varchar(35) NOT NULL default '',
-  `lastname` varchar(35) NOT NULL default '',
-  `company` varchar(35) NOT NULL default '',
-  `type` varchar(35) NOT NULL default '',
+  `firstname` varchar(35) NOT NULL ,
+  `lastname` varchar(35) NOT NULL ,
+  `company` varchar(35) NOT NULL ,
+  `type` varchar(35) NOT NULL,
   `assigned_to` int(35) NOT NULL ,
   `created_by`  int(35) NOT NULL ,
   `created_on` DATETIME NOT NULL ,
   `updated_at` DATETIME NOT NULL ,
-  `telephone` varchar(35) NOT NULL default '',
-  `email` varchar(35) NOT NULL default '',
+  `telephone` varchar(35) NOT NULL ,
+  `email` varchar(35) NOT NULL ,
    PRIMARY KEY  (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=4080 DEFAULT CHARSET=utf8mb4;
 
@@ -84,7 +84,7 @@ CREATE TABLE `notes` (
   `contact_id` int(11) NOT NULL,
   `comment` text NOT NULL,
   `created_by` int(11) NOT NULL,
-  `created_at` DATETIME NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `created_at` DATETIME NOT NULL ,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=4080 DEFAULT CHARSET=utf8mb4;
 
