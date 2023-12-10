@@ -40,7 +40,7 @@
             <tbody>
             <?php foreach ($results as $row): ?>
                 <tr>
-                    <td><strong><?= $row['firstname'] ?> <?= $row['lastname'] ?></strong></td>
+                    <td><strong><?= $row['title'] ?> <?= $row['firstname'] ?> <?= $row['lastname'] ?></strong></td>
                     <td><?= $row['email'] ?></td>
                     <td><?= $row['company'] ?></td>                    
                                        

@@ -33,6 +33,7 @@ INSERT INTO `users` (`firstname`, `lastname`, `role`, `created_at`, `password`, 
 DROP TABLE IF EXISTS `contacts`;
 CREATE TABLE `contacts` (
   `id` int(11) NOT NULL auto_increment,
+  `title` varchar(35) NOT NULL ,
   `firstname` varchar(35) NOT NULL ,
   `lastname` varchar(35) NOT NULL ,
   `company` varchar(35) NOT NULL ,
@@ -51,29 +52,29 @@ CREATE TABLE `contacts` (
 -- Mock data for `contacts`
 --
 
-INSERT INTO `contacts` (`firstname`, `lastname`, `company`, `type`, `assigned_to`, `created_by`, `created_on`, `updated_at`, `telephone`, `email`)
+INSERT INTO `contacts` ( `title`,`firstname`, `lastname`, `company`, `type`, `assigned_to`, `created_by`, `created_on`, `updated_at`, `telephone`, `email`)
 VALUES
-    ('Eva', 'Miller', 'Tech Innovators', 'Support', 4081, 4080,'2023-12-02' ,'2023-12-02', '555-1111', 'eva.miller@example.com'),
-    ('David', 'Clark', 'Data Solutions', 'Sales Lead', 4082, 4085,'2023-12-02' ,'2023-12-03', '555-2222', 'david.clark@example.com'),
-    ('Grace', 'Taylor', 'Web Developers', 'Supplier', 4081, 4085,'2023-12-02' ,'2023-12-04', '555-3333', 'grace.taylor@example.com'),
-    ('Oliver', 'White', 'Creative Minds', 'Sales Lead', 4081, 4080,'2023-12-02' ,'2023-12-05', '555-4444', 'oliver.white@example.com'),
-    ('Sophie', 'Anderson', 'Digital Services', 'Sales Lead', 4085, 4083,'2023-12-02' ,'2023-12-06', '555-5555', 'sophie.anderson@example.com'),
-    ('Liam', 'Garcia', 'Tech Solutions', 'Sales Lead', 4086, 4085, '2023-12-02','2023-12-07', '555-6666', 'liam.garcia@example.com'),
-    ('Ava', 'Brown', 'Innovate IT', 'Sales Lead', 4085, 4088, '2023-12-02','2023-12-08', '555-7777', 'ava.brown@example.com'),
-    ('Logan', 'Evans', 'Data Insights', 'Support', 4086, 4083, '2023-12-02','2023-12-09', '555-8888', 'logan.evans@example.com'),
-    ('Chloe', 'Wright', 'Global Solutions', 'Support', 4085, 4083,'2023-12-02' ,'2023-12-10', '555-9999', 'chloe.wright@example.com'),
-    ('Mia', 'Turner', 'Tech Innovators', 'Support', 4086, 4085, '2023-12-02','2023-12-11', '555-0000', 'mia.turner@example.com'),
-    ('Jack', 'Perez', 'Creative Minds', 'Sales Lead', 4088, 4085,'2023-12-02' ,'2023-12-12', '555-1234', 'jack.perez@example.com'),
-    ('Emma', 'Martinez', 'Web Developers', 'Support', 4086, 4085,'2023-12-02' ,'2023-12-13', '555-5678', 'emma.martinez@example.com'),
-    ('Noah', 'King', 'Data Solutions', 'Sales Lead', 4085, 4088, '2023-12-02','2023-12-14', '555-9876', 'noah.king@example.com'),
-    ('Aria', 'Fisher', 'Tech Solutions', 'Support', 4086, 4088, '2023-12-02','2023-12-15', '555-5432', 'aria.fisher@example.com'),
-    ('Jacob', 'Cook', 'Innovate IT', 'Support', 4083, 4088, '2023-12-02','2023-12-16', '555-8765', 'jacob.cook@example.com'),
-    ('Sophia', 'Ward', 'Digital Services', 'Support', 4088, 4088, '2023-12-02','2023-12-17', '555-9876', 'sophia.ward@example.com'),
-    ('Ethan', 'Allen', 'Data Insights', 'Support', 4083, 4087,'2023-12-02' ,'2023-12-18', '555-7654', 'ethan.allen@example.com'),
-    ('Avery', 'Parker', 'Global Solutions', 'Sales Lead', 4086, 4087, '2023-12-02','2023-12-19', '555-8765', 'avery.parker@example.com'),
-    ('Lily', 'Turner', 'Tech Innovators', 'Sales Lead', 4083, 4088,'2023-12-02' ,'2023-12-20', '555-9876', 'lily.turner@example.com'),
-    ('Jackson', 'Baker', 'Creative Minds', 'Sales Lead', 4087, 4088,'2023-12-02' ,'2023-12-21', '555-5432', 'jackson.baker@example.com'),
-    ('Jack', 'Bake', 'Creative Minds', 'Support', 4087, 4088,'2023-12-02' ,'2023-12-21', '555-5432', 'jack.baker@example.com');
+    ('Mr','Eva', 'Miller', 'Tech Innovators', 'Support', 4081, 4080,'2023-12-02' ,'2023-12-02', '555-1111', 'eva.miller@example.com'),
+    ('Mr','David', 'Clark', 'Data Solutions', 'Sales Lead', 4082, 4085,'2023-12-02' ,'2023-12-03', '555-2222', 'david.clark@example.com'),
+    ('Mr','Grace', 'Taylor', 'Web Developers', 'Supplier', 4081, 4085,'2023-12-02' ,'2023-12-04', '555-3333', 'grace.taylor@example.com'),
+    ('Mr','Oliver', 'White', 'Creative Minds', 'Sales Lead', 4081, 4080,'2023-12-02' ,'2023-12-05', '555-4444', 'oliver.white@example.com'),
+    ('Mr','Sophie', 'Anderson', 'Digital Services', 'Sales Lead', 4085, 4083,'2023-12-02' ,'2023-12-06', '555-5555', 'sophie.anderson@example.com'),
+    ('Mr','Liam', 'Garcia', 'Tech Solutions', 'Sales Lead', 4086, 4085, '2023-12-02','2023-12-07', '555-6666', 'liam.garcia@example.com'),
+    ('Mr','Ava', 'Brown', 'Innovate IT', 'Sales Lead', 4085, 4088, '2023-12-02','2023-12-08', '555-7777', 'ava.brown@example.com'),
+    ( 'Mr','Logan', 'Evans', 'Data Insights', 'Support', 4086, 4083, '2023-12-02','2023-12-09', '555-8888', 'logan.evans@example.com'),
+    ('Mr','Chloe', 'Wright', 'Global Solutions', 'Support', 4085, 4083,'2023-12-02' ,'2023-12-10', '555-9999', 'chloe.wright@example.com'),
+    ('Mrs' ,'Mia', 'Turner', 'Tech Innovators', 'Support', 4086, 4085, '2023-12-02','2023-12-11', '555-0000', 'mia.turner@example.com'),
+    ('Mrs','Jack', 'Perez', 'Creative Minds', 'Sales Lead', 4088, 4085,'2023-12-02' ,'2023-12-12', '555-1234', 'jack.perez@example.com'),
+    ('Mrs','Emma', 'Martinez', 'Web Developers', 'Support', 4086, 4085,'2023-12-02' ,'2023-12-13', '555-5678', 'emma.martinez@example.com'),
+    ('Mrs','Noah', 'King', 'Data Solutions', 'Sales Lead', 4085, 4088, '2023-12-02','2023-12-14', '555-9876', 'noah.king@example.com'),
+    ('Mrs','Aria', 'Fisher', 'Tech Solutions', 'Support', 4086, 4088, '2023-12-02','2023-12-15', '555-5432', 'aria.fisher@example.com'),
+    ('Mrs','Jacob', 'Cook', 'Innovate IT', 'Support', 4083, 4088, '2023-12-02','2023-12-16', '555-8765', 'jacob.cook@example.com'),
+    ('Mrs','Sophia', 'Ward', 'Digital Services', 'Support', 4088, 4088, '2023-12-02','2023-12-17', '555-9876', 'sophia.ward@example.com'),
+    ('Mrs','Ethan', 'Allen', 'Data Insights', 'Support', 4083, 4087,'2023-12-02' ,'2023-12-18', '555-7654', 'ethan.allen@example.com'),
+    ('Mrs','Avery', 'Parker', 'Global Solutions', 'Sales Lead', 4086, 4087, '2023-12-02','2023-12-19', '555-8765', 'avery.parker@example.com'),
+    ('Mrs','Lily', 'Turner', 'Tech Innovators', 'Sales Lead', 4083, 4088,'2023-12-02' ,'2023-12-20', '555-9876', 'lily.turner@example.com'),
+    ('Mrs','Jackson', 'Baker', 'Creative Minds', 'Sales Lead', 4087, 4088,'2023-12-02' ,'2023-12-21', '555-5432', 'jackson.baker@example.com'),
+    ('Mrs','Jack', 'Bake', 'Creative Minds', 'Support', 4087, 4088,'2023-12-02' ,'2023-12-21', '555-5432', 'jack.baker@example.com');
 
 --
 -- Table structure for table `notes`
