@@ -122,9 +122,15 @@ if ($notesStmt) {
             <?php } else { ?>          
                 <?php foreach ($notesResult as $row): ?>
                     <div class="NotesComment">
+                    <?php
+                        // Fetch user details based on created_by value
+                        $userStmt1 = $conn->prepare("SELECT firstname, lastname FROM users WHERE id = ?");
+                        $userStmt1->execute([$row['created_by']]);
+                        $userResult1 = $userStmt1->fetch(PDO::FETCH_ASSOC);
+                        ?>
                         <!-- Fetch user details based on created_by value -->
                         <i class="fa-solid fa-user"></i>
-                        <div id="userfullname"><?= $userResult['firstname'] . ' ' . $userResult['lastname'] ?></div>
+                        <div id="userfullname"><?= $userResult1['firstname'] . ' ' . $userResult1['lastname'] ?></div>
                         <p><?= $row['comment'] ?></p>
                         <p id="commentdate">
                         <?php 
