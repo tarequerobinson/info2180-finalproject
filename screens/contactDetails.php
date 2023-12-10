@@ -80,13 +80,14 @@ if ($notesStmt) {
             <?php
             // Conditionally display buttons based on the user type
             if ($result['type'] === "Sales Lead") {
-                echo '<button id = "SupportButton" class = "switch" >Switch to Support</button>';
+                echo '<button id = "SupportButton" class = "switch" >Switch To Support</button>';
             } elseif ($result['type'] === "Support") {
                 echo '<button id = "SalesButton" class = "switch" >Switch To Sales Lead</button>';
             }        
             ?>
         </div>
     </div>
+
 
     <div id="contactDetailsBody">        
 
@@ -192,6 +193,48 @@ if ($notesStmt) {
         const formattedDateTime = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
         console.log(formattedDateTime)
         currentDateInput.value = formattedDateTime;
+    
+    
+    var switchButton=document.querySelector(".switch");
+    console.log(switchButton);
+
+
+
+    switchButton.addEventListener("click" , function () {
+                // Send an asynchronous request to update the contact type
+                const contactId = <?php $result["id"] ?>; // Replace with the actual contact ID
+        var newType ;
+        
+        if (switchButton.innerHTML  == "Switch To Sales Lead" ){
+            newType = "Sales Lead";
+        }
+        else if (switchButton.innerHTML  == "Switch To Support" )  {
+            newType = "Support";
+
+        };
+
+        // Using Fetch API for simplicity
+        fetch("updateContactType.php", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded",
+            },
+            body: `contactId=${contactId}&newType=${newType}`,
+        })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    console.log("Contact type updated successfully");
+                } else {
+                    console.error("Error updating contact type");
+                }
+            })
+            .catch(error => {
+                console.error("Error:", error);
+            });
+
+
+    })
     });
 
    
