@@ -2,6 +2,11 @@
 
 session_start(); // Start the session
 
+if(!isset($_SESSION['user_id'])) {
+    $_SESSION = array();
+    header("Location: login.php");
+    exit();
+} 
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -32,7 +37,7 @@ session_start(); // Start the session
                 <li onclick="loadScreen('dashboard')"> <i class="fa-solid fa-house"></i> Home </li>
                 <li onclick="loadScreen('contact')"><i class="fa-regular fa-circle-user"></i> New Contact</li>
                 <li onclick="loadScreen('users')"><i class="fa-solid fa-user-group"></i> Users </li>
-                <li onclick="loadLoginPage()"><i class="fa-solid fa-arrow-right-from-bracket"></i></i> Logout </li>
+                <li><a href="logout.php"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout </a></li>
             </ul>
         </nav>
 

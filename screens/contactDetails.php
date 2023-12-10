@@ -5,7 +5,7 @@ session_start();
 
 $id = isset($_GET['id']) ? $_GET['id'] : '';
 $user_id = $_SESSION['user_id']?? ''; 
-print_r('this is: '.$user_id);
+// print_r('this is: '.$user_id);
 
 
 
