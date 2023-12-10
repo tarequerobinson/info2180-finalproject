@@ -38,7 +38,7 @@
     border-radius: 3px;    
 	border:  1.5px solid rgba(37, 90, 154, 0.591);
     margin-top: 20px;
-    width: 72.5vw;
+    width: 72.8vw;
     padding: 23px;
 }
 
@@ -47,7 +47,7 @@
     border-radius: 3px;
     border: 1.3px solid #00000046;
     font-size: 12px;
-    width: 72.5vw;
+    width: 72.78vw;
 }
 #dashBody table td {
 	padding: 11px;
@@ -55,6 +55,44 @@
     padding-left: 25px;
     border-top: 1.3px solid rgba(63, 63, 63, 0.663);  
 }
+
+#dashBody table td .contactype{
+	justify-content: center; 
+}
+
+#support{
+    justify-content: center;
+    color: white;
+    background-color: rgb(59, 123, 165);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+    width: 60px;
+    border-radius: 5px;    
+	border:  1px solid rgba(36, 44, 54, 0.511);
+    padding: 2.5px; 
+    padding-left: 5px;  
+    padding-right: 5px;  
+    text-align: center;  
+    font-weight: bold;    
+    font-size: 10px;
+}
+
+#saleslead{
+    justify-content: center;
+    background-color: rgb(107, 59, 165);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+    color: white;
+    width: 55px;
+    border-radius: 5px;    
+	border:  1px solid rgba(36, 44, 54, 0.511);
+    padding: 2.5px; 
+    padding-left: 8px;  
+    padding-right: 8px;  
+    text-align: center;  
+    font-weight: bold;    
+    font-size: 10px;
+    white-space: nowrap;
+}
+
 #dashBody table th {
     font-weight: bold;
     font-size: 14px;
@@ -62,8 +100,9 @@
     padding: 11px; 
     padding-left: 25px;   
     color: white;
-    background-color: rgba(66, 99, 131, 0.868); 
+    background-color: rgba(52, 77, 103, 0.868); 
 }
+
 #dashBody table thead td {
 	font-weight: bold;
     padding-left: 20px;
@@ -78,8 +117,8 @@
     padding: 4px; 
     padding-left: 10px;
     padding-right: 10px;
-    margin-right: -8px;
-    margin-left: 0px;
+    margin-right: -5px;
+    margin-left: 2px;
 }
 
 #dashBody td button:hover{
