@@ -135,7 +135,7 @@ if ($notesStmt) {
                         <!-- Fetch user details based on created_by value -->
                         <i class="fa-solid fa-user"></i>
                         <div id="userfullname">
-                            <?php if($userResult) : ?>
+                            <?php if($userResult1) : ?>
                                 <?= $userResult1['firstname'] . ' ' . $userResult1['lastname'] ?>
                             <?php else : ?>    
                                 <?= "None" ?>
