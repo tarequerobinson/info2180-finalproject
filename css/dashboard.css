@@ -56,7 +56,14 @@
     border-top: 1.3px solid rgba(63, 63, 63, 0.663);  
 }
 
-#dashBody table td .contactype{
+#dashBody table td {
+	padding: 11px;
+    padding-right: 38px;
+    padding-left: 25px;
+    border-top: 1.3px solid rgba(63, 63, 63, 0.663);  
+}
+
+#dashBody table td .contacttype{
 	justify-content: center; 
 }
 
