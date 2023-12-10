@@ -80,6 +80,10 @@ document.addEventListener('DOMContentLoaded', () => {
     loadScreen('dashboard')
 });
 
+function Print() {
+    alert("Test!")
+}
+
 
             
 

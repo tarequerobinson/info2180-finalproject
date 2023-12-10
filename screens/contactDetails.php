@@ -61,7 +61,6 @@ if ($notesStmt) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Details</title>
 
-    <script src="js/contactDetails.js"></script>
     <link rel="stylesheet" type= "text/css" href="css/contactDetails.css">
 </head>
 
@@ -78,7 +77,9 @@ if ($notesStmt) {
         </div>
         
         <div id="contactHeadButtons">
-            <button id = "Assign" class = "assign" > <i id="hand" class="fa-solid fa-hand-pointer"></i> Assign to Me</button>
+            <button id = "Assign" class = "assign" onclick="Print()"> 
+                <i id="hand" class="fa-solid fa-hand-pointer"></i> 
+                Assign to Me</button>
             <?php
             // Conditionally display buttons based on the user type
             if ($result['type'] === "Sales Lead") {
@@ -177,6 +178,7 @@ if ($notesStmt) {
 
 <script src="js/contactDetails.js"></script>
 <script>
+    
     document.addEventListener('DOMContentLoaded', function(event) {
     var switchButton=document.querySelector(".switch");
     console.log(switchButton);
