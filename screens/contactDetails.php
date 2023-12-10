@@ -176,30 +176,6 @@ if ($notesStmt) {
 <script src="js/contactDetails.js"></script>
 <script>
     document.addEventListener('DOMContentLoaded', function(event) {
-        alert('I AM RUNNING');
-        console.log('Is the contentloading');
-        
-        currentDateInput = document.getElementById("created_at")
-        const today = new Date();
-
-        // Format date
-        const year = today.getFullYear();
-        const month = String(today.getMonth() + 1).padStart(2, '0');
-        const day = String(today.getDate()).padStart(2, '0');
-
-        // Format time
-        const hours = String(today.getHours()).padStart(2, '0');
-        const minutes = String(today.getMinutes()).padStart(2, '0');
-        const seconds = String(today.getSeconds()).padStart(2, '0');
-
-        // Combine date and time
-
-        
-        const formattedDateTime = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
-        console.log(formattedDateTime)
-        currentDateInput.value = formattedDateTime;
-    
-    
     var switchButton=document.querySelector(".switch");
     console.log(switchButton);
 
