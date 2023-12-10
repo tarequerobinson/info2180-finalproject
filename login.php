@@ -71,6 +71,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 if ($user && password_verify($password, $user['password'])) {
     $_SESSION['email'] = $email;
     $_SESSION['user_id'] = $user['id']; // Set the session variable
+    $_SESSION['firstname'] = $user['firstname'];
     header("Location: index.php");
     exit();
 } else {

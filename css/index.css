@@ -22,6 +22,19 @@ html{
     padding-right: 10px;
 }
 
+header{
+
+    display: flex;
+}
+
+header p {
+
+    color: white;
+    font-size: 12px;
+    margin-left: 20px;
+
+}
+
 header h1{
     color: white;
     font-size: 18px;

@@ -13,7 +13,7 @@ if(!isset($_SESSION['user_id'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dolphin CRM</title>
+    <title>Dolphin CRM <?=$_SESSION['firstname']?></title>
 
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     <script src="https://kit.fontawesome.com/e1f0748c4a.js" ></script>
@@ -25,8 +25,9 @@ if(!isset($_SESSION['user_id'])) {
 <body>
     <header>
         <img id=icon src="images/dolphin-logo.png" alt="A picture of a cartoon dolphin logo.">
-        <h1>Dolphin CRM </h1>
-        <!-- <?= $_SESSION['email'] ?> -->
+        <h1>Dolphin CRM </h1> 
+        <p> Welcome <?= $_SESSION['firstname'] ?> ! </p>
+
     </header>
 
     <div id="loginPage"> </div>
