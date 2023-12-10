@@ -12,6 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $password = isset($_POST['password']) ? $_POST['password'] : '';
     $hrfix = intval($date->format("H")) - 1;
     $createdat = $date->format("Y-m-d") . " " . $date->format($hrfix . ":i:s");
+    $password = password_hash ($password, PASSWORD_DEFAULT);
 
     
     $stmt = $conn->prepare("INSERT INTO users (firstname, lastname, email, password , role, created_at) VALUES (?, ?, ?, ?, ?, ?)");
