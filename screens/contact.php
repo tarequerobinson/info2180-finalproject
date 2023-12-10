@@ -31,9 +31,9 @@
             <div class="formselect" id="divtitle">
                 <label for="title">Title</label>
                 <select name="title" id="title">
-                    <option value="mr">Mr</option>
-                    <option value="mrs">Mrs</option>     
-                    <option value="ms">Miss</option>                
+                    <option value="Mr. ">Mr</option>
+                    <option value="Mrs. ">Mrs</option>     
+                    <option value="Ms. ">Miss</option>                
                 </select>
             </div>
 
