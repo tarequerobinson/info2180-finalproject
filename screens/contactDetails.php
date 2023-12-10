@@ -106,7 +106,11 @@ if ($notesStmt) {
             <div class="detailsrow">
                 <h4>Assigned To:</h4>
                 <div id="assignedTo">
-                <?= $userResult['firstname'] . ' ' . $userResult['lastname'] ?>
+                    <?php if($userResult) : ?>
+                        <?= $userResult['firstname'] . ' ' . $userResult['lastname'] ?>
+                    <?php else : ?>    
+                        <?= "None" ?>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>
