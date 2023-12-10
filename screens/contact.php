@@ -90,8 +90,8 @@
                     <div id="cncttype">
                         <label for="type">Type</label>
                         <select name="type" id="type">
-                            <option value="support">Support</option>
-                            <option value="sales">Sales Lead</option>                
+                            <option value="Support">Support</option>
+                            <option value="Sales Lead">Sales Lead</option>                
                         </select>
                     </div>
                 </div>
