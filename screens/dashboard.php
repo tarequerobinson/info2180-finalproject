@@ -27,6 +27,25 @@
     </div>       
 
     <div id='dashBody'> 
+        <div id='dashFilter'>
+            <h2><i class="fa-solid fa-filter"></i> Filters: </h2>
+
+            <div class="radio-toolbar">
+                <input type="radio" id="All" name="cntsFilter" value="All" checked>
+                <label for="All">All</label>
+
+                <input type="radio" id="Sales Leads" name="cntsFilter" value="Sales Leads">
+                <label for="Sales Leads">Sales Leads</label>
+
+                <input type="radio" id="Support" name="cntsFilter" value="Support">
+                <label for="Support">Support</label> 
+                
+                <input type="radio" id="Assigned" name="cntsFilter" value="Assigned">
+                <label for="Assigned">Assigned To Me</label> 
+            </div>
+        </div>
+
+
         <table id="contactstable">
             <thead>
                 <tr>

@@ -7,7 +7,7 @@ body{
 	background: rgba(255, 255, 255, 0.791);
 	height: 100vh;
 	overflow: hidden;
-	background-image: url("../images/gradient.jpg");
+	background-image: url("../images/gradient.png");
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -74,7 +74,7 @@ header{
     justify-content: center;
     align-items: center;
 	width: 35%;
-	background-color: rgb(232, 239, 243);
+	background-color: rgba(232, 239, 243, 0.948);
     border-radius: 10px;
     margin-top: 12px;
     padding: 20px;

@@ -41,7 +41,7 @@
                 <tr>
                     <td><strong><?= $row['firstname'] ?> <?= $row['lastname'] ?></strong></td>
                     <td><?= $row['email'] ?></td>
-                    <td><?= $row['role'] ?></td>
+                    <td><?= ucfirst($row['role']) ?></td>
                     <td><?= $row['created_at'] ?></td>
                 </tr>
             <?php endforeach; ?>

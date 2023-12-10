@@ -45,7 +45,7 @@
 #userBody table{
 	border-collapse: collapse;
     border-radius: 3px;
-    border: 1.3px solid #00000046;
+    border: 1.5px solid rgba(37, 90, 154, 0.591);
     font-size: 12px;
     width: 71.5vw;
 }
