@@ -131,12 +131,11 @@ if ($notesStmt) {
                         <div id="userfullname"><?= $userResult['firstname'] . ' ' . $userResult['lastname'] ?></div>
                         <p><?= $row['comment'] ?></p>
                         <p id="commentdate">
-                        <?php 
-                    $noteCreatedDate = new DateTime($row['created_at']);
-                    echo $noteCreatedDate->format('l, F j, Y g:i A');
-                    ?>
-                        
-                    </p>  
+                            <?php 
+                            $noteCreatedDate = new DateTime($row['created_at']);
+                            echo $noteCreatedDate->format('l, F j, Y g:i A');
+                            ?>
+                        </p>  
                     </div> 
                 <?php endforeach; ?> 
             <?php } ?>                  
