@@ -42,6 +42,13 @@ if ($notesStmt) {
     // Handle the error if the query fails
     echo "Error: " . $conn->errorInfo()[2];
 }
+
+                // Fetch user details based on created_by value
+                $userStmt = $conn->prepare("SELECT firstname, lastname FROM users WHERE id = ?");
+                $userStmt->execute([$result['assigned_to']]);
+                $userResult = $userStmt->fetch(PDO::FETCH_ASSOC);
+                // print_r($userResult);
+              
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -98,7 +105,7 @@ if ($notesStmt) {
             <div class="detailsrow">
                 <h4>Assigned To:</h4>
                 <div id="assignedTo">
-                    Name
+                <?= $userResult['firstname'] . ' ' . $userResult['lastname'] ?>
                 </div>
             </div>
         </div>
@@ -112,10 +119,14 @@ if ($notesStmt) {
             <?php } else { ?>          
                 <?php foreach ($notesResult as $row): ?>
                     <div class="NotesComment">
-                    <i class="fa-solid fa-user"></i>
-                    <div id="userfullname">Name Name</div>
-                    <p><?= $row['comment'] ?></p>
-                    <p id="commentdate">
+                        // Fetch user details based on created_by value
+                        $userStmt = $conn->prepare("SELECT firstname, lastname FROM users WHERE id = ?");
+                        $userStmt->execute([$row['created_by']]);
+                        $userResult = $userStmt->fetch(PDO::FETCH_ASSOC);
+                        <i class="fa-solid fa-user"></i>
+                        <div id="userfullname"><?= $userResult['firstname'] . ' ' . $userResult['lastname'] ?></div>
+                        <p><?= $row['comment'] ?></p>
+                        <p id="commentdate">
                         <?= $row['created_at'] ?></p>  
                     </div> 
                 <?php endforeach; ?> 
@@ -147,9 +158,7 @@ if ($notesStmt) {
         event.preventDefault();
         alert('I AM RUNNING');
         console.log('Is the contentloading');
-        getUserbyID(<?= $id ?>);
-        getNoteUserbyID (<?= $id ?>);
-        setDatesforEach(<?= $notesResult['created_at'] ?>);
+        
         currentDateInput = document.getElementById("created_at")
         const today = new Date();
 
