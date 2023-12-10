@@ -176,7 +176,6 @@ if ($notesStmt) {
 <script src="js/contactDetails.js"></script>
 <script>
     document.addEventListener('DOMContentLoaded', function(event) {
-        event.preventDefault();
         alert('I AM RUNNING');
         console.log('Is the contentloading');
         
