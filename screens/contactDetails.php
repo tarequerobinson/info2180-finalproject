@@ -17,7 +17,7 @@ if ($stmt) {
         // Output the result or use it as needed
         /*print_r($result);*/
     } else {
-        $result = "No contact found with the provided ID.";
+        echo "No contact found with the provided ID.";
     }
 } else {
     // Handle the error if the query fails
@@ -43,11 +43,11 @@ if ($notesStmt) {
     echo "Error: " . $conn->errorInfo()[2];
 }
 
-                // Fetch user details based on created_by value
-                $userStmt = $conn->prepare("SELECT firstname, lastname FROM users WHERE id = ?");
-                $userStmt->execute([$result['assigned_to']]);
-                $userResult = $userStmt->fetch(PDO::FETCH_ASSOC);
-                // print_r($userResult);
+    // Fetch user details based on created_by value
+    $userStmt = $conn->prepare("SELECT firstname, lastname FROM users WHERE id = ?");
+    $userStmt->execute([$result['assigned_to']]);
+    $userResult = $userStmt->fetch(PDO::FETCH_ASSOC);
+    // print_r($userResult);
               
 ?>
 <!DOCTYPE html>
@@ -61,7 +61,7 @@ if ($notesStmt) {
     <link rel="stylesheet" type= "text/css" href="css/contactDetails.css">
 </head>
 
-<body>
+<body>   
     <div id="contactDetailsHead">
         
         <div id="divA">
@@ -86,7 +86,8 @@ if ($notesStmt) {
         </div>
     </div>
 
-    <div id="contactDetailsBody">
+    <div id="contactDetailsBody">        
+
         <div id="div1">
             <div class="detailsrow">
                 <h4>Email:</h4>
@@ -118,11 +119,7 @@ if ($notesStmt) {
             
             <?php } else { ?>          
                 <?php foreach ($notesResult as $row): ?>
-                    <div class="NotesComment">
-                        // Fetch user details based on created_by value
-                        $userStmt = $conn->prepare("SELECT firstname, lastname FROM users WHERE id = ?");
-                        $userStmt->execute([$row['created_by']]);
-                        $userResult = $userStmt->fetch(PDO::FETCH_ASSOC);
+                    <div class="NotesComment">                        
                         <i class="fa-solid fa-user"></i>
                         <div id="userfullname"><?= $userResult['firstname'] . ' ' . $userResult['lastname'] ?></div>
                         <p><?= $row['comment'] ?></p>
