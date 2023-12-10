@@ -44,6 +44,7 @@
 // }
 
 document.getElementsByClassName("switch").addEventListener('click', function(){
+    console.log("hi hi");
     var switchbutton = document.getElementByClass("switch")
 
     if (switchbutton.id == "SupportButton"){
