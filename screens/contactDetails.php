@@ -83,9 +83,9 @@ if ($notesStmt) {
             <?php
             // Conditionally display buttons based on the user type
             if ($result['type'] === "Sales Lead") {
-                echo "<button id = 'SupportButton' class = 'switch' onclick='Print({$result['id']})'> <i id='flip' class='fa-solid fa-repeat'></i> Switch To Support</button>";
+                echo "<button id = 'SupportButton' class = 'switch' style='background: rgb(59, 123, 165);' onclick='Print({$result['id']})'> <i id='flip' class='fa-solid fa-repeat'></i> Switch To Support</button>";
             } elseif ($result['type'] === "Support") {
-                echo "<button id = 'SalesButton' class = 'switch' onclick='Print({$result['id']})'> <i id='flip' class='fa-solid fa-repeat'></i> Switch To Sales Lead</button>";
+                echo "<button id = 'SalesButton' class = 'switch' style='background: rgb(107, 59, 165);' onclick='Print({$result['id']})'> <i id='flip' class='fa-solid fa-repeat'></i> Switch To Sales Lead</button>";
             }        
             ?>
         </div>

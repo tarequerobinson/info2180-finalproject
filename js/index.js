@@ -113,11 +113,11 @@ fetch("database/updateContactType.php", {
     .then(response => response.json())
     .then(data => {
         if (data.success) {
-            console.log("Contact type updated successfully");
+            console.log("SUCCESSFULLY SWITCHED THE TYPE OF CONTACT WITH ID: " + id);
             alert("SUCCESSFULLY SWITCHED THE TYPE OF CONTACT WITH ID: " + id)
 
         } else {
-            console.error("Error updating contact type");
+            console.error("FAILED TO SWITCH THE TYPE OF CONTACT WITH ID: " + id);
             alert("FAILED TO SWITCH THE TYPE OF CONTACT WITH ID: " + id)
 
         }

@@ -49,7 +49,7 @@
 }
 
 #contactHeadButtons button{
-    background: rgb(59, 82, 113);  
+    background: rgb(59, 82, 113);      
     border-radius: 2px;  
     font-size: 11px;
     color: white;
@@ -59,10 +59,25 @@
     padding-right: 10px;
     margin-right: 8px;
 }
-
 #contactHeadButtons button:hover{
     background: rgb(28, 43, 63);
 }
+
+#SupportButton{
+    background: rgb(59, 123, 165);  
+}
+#SupportButton:hover{
+    background: rgb(35, 83, 114);  
+}
+
+#SalesButton{
+    background: rgb(107, 59, 165);  
+}
+#SalesButton:hover{
+    background: rgb(61, 28, 101); 
+}
+
+
 
 #contactDetailsBody{
     align-items: center;
