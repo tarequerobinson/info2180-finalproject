@@ -29,7 +29,6 @@
     <div id='dashBody'> 
         <div id='dashFilter'>
             <h2><i class="fa-solid fa-filter"></i> Filters: </h2>
-
             <div class="radio-toolbar">
                 <input type="radio" id="All" name="cntsFilter" value="All" checked>
                 <label for="All">All</label>

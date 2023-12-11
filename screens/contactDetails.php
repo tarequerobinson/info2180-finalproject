@@ -77,7 +77,7 @@ if ($notesStmt) {
         </div>
         
         <div id="contactHeadButtons">
-            <button id = "Assign" class = "assign" onclick=""> 
+            <button id = "Assign" class = "assign" onclick='AssignedTo(<?= $result['id'] ?> , <?= $user_id ?> )' > 
                 <i id="hand" class="fa-solid fa-hand-pointer"></i> 
                 Assign to Me</button>
             <?php
