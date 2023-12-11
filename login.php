@@ -10,6 +10,7 @@
 	<meta charset="ISO-8859-1">
 	<title>Login Dolphin CRM</title>
 	<link rel="stylesheet" href="css/login.css"/>
+    <script src="https://kit.fontawesome.com/e1f0748c4a.js" ></script>
 </head>
 
 <body>
@@ -23,8 +24,9 @@
             <div class = "textField">		
                 <input placeholder="Password" type = "password" name ="password" required>
             </div>
+            <div id = "errormsg"></div>
             <div class = "loginbutton">
-                <button type = "submit" value ="Login"> Login </button>
+                <button type = "submit" value ="Login" onclick="clearError()"> Login </button>
             </div>
 
             <p>Copyright © 2023 Dolphin CRM</p>        
@@ -34,6 +36,22 @@
 </body>
 
 </html>
+
+<script type="text/javascript">
+    var errordiv = document.getElementById("errormsg")
+
+    document.addEventListener('DOMContentLoaded', () => {   
+        console.log(errordiv);
+    });
+
+    function showError() {
+        errordiv.innerHTML = "<i class='fa-solid fa-circle-exclamation'></i>" + " Invalid Username or Password.";
+    }
+
+    function clearError() {
+        errordiv.innerHTML = "";
+    }
+</script>
 
 
 <?php
@@ -76,8 +94,8 @@ if ($user && password_verify($password, $user['password'])) {
     exit();
 } else {
     $_SESSION['email'] = ""; // Set the session variable
-
-    echo json_encode(["status" => "error", "message" => "Invalid username or password"]);
+    echo '<script type="text/javascript"> showError(); </script>';
+    //echo json_encode(["status" => "error", "message" => "Invalid username or password"]);
 }
 
 }
