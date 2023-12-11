@@ -1,20 +1,43 @@
 <?php
-
-include ("dbsetup.php");
-
+include("dbsetup.php");
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $contactId = $_POST['contactId'];
-    $newType = $_POST['newType'];
+    // $newType = $_POST['newType'];
 
-    // Update the contact type in the database
-    $updateTypeStmt = $conn->prepare("UPDATE contacts SET type = ? WHERE id = ?");
-    $updateTypeStmt->execute([$newType, $contactId]);
+    // Check if the contact with the given ID exists
+    $checkContactStmt = $conn->prepare("SELECT id , type FROM contacts WHERE id = ?");
+    $checkContactStmt->execute([$contactId]);
+    $foundContact = $checkContactStmt->fetch(PDO::FETCH_ASSOC);
 
-    if ($updateTypeStmt->rowCount() > 0) {
-        $response = ['success' => true];
-    } else {
-        $response = ['success' => false];
+
+    if ($checkContactStmt->rowCount() > 0) {
+        if ($foundContact['type'] === 'Sales Lead') {
+
+        // Update the contact type
+        $updateTypeStmt = $conn->prepare("UPDATE contacts SET type = 'Support' WHERE id = ?");
+        $updateTypeStmt->execute([ $contactId]);
+
+
+
+
+
+            // Action for Sales type
+            $response = ['success' => true, 'action' => 'Sales Lead action'];
+        } elseif ($foundContact['type'] === 'Support') {
+
+
+            // Update the contact type
+            $updateTypeStmt = $conn->prepare("UPDATE contacts SET type = 'Sales Lead' WHERE id = ?");
+            $updateTypeStmt->execute([ $contactId]);
+
+            // Action for Support type
+            $response = ['success' => true, 'action' => 'Support action'];
+        } 
+    } 
+    
+    else {
+        $response = ['success' => false, 'message' => 'Contact not found.'];
     }
 
     // Send JSON response back to the client
@@ -22,5 +45,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     echo json_encode($response);
     exit();
 }
-
 ?>

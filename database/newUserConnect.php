@@ -7,7 +7,7 @@ $date = new DateTime();
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $firstname = isset($_POST['firstname']) ? htmlspecialchars($_POST['firstname']) : '';
     $lastname = isset($_POST['lastname']) ? htmlspecialchars($_POST['lastname']) : '';
-    $email = isset($_POST['email']) ? htmlspecialchars($_POST['email']) : '';
+    $email = isset($_POST['email']) ? filter_var($_POST['email'], FILTER_SANITIZE_EMAIL) : '';
     $role = isset($_POST['role']) ? htmlspecialchars($_POST['role']) : '';
     $password = isset($_POST['password']) ? htmlspecialchars($_POST['password']) : '';
     $hrfix = intval($date->format("H")) - 1;

@@ -81,40 +81,53 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function Print(id) {
-    alert("Test! Id: " + id)
+
+    console.log(id);
 
 
      // Send an asynchronous request to update the contact type
      const contactId = id; // Replace with the actual contact ID
-     var newType ;
+    //  var newType = "Sales";
+
+     console.log(contactId);
+    //  console.log(newType);
+
+
      
-     /*if (switchButton.innerHTML  == "Switch To Sales Lead" ){
-         newType = "Sales Lead";
-     }
-     else if (switchButton.innerHTML  == "Switch To Support" )  {
-         newType = "Support";
 
-     };*/
+const formData = new URLSearchParams();
+console.log(formData);
 
-     // Using Fetch API for simplicity
-     fetch("updateContactType.php", {
-         method: "POST",
-         headers: {
-             "Content-Type": "application/x-www-form-urlencoded",
-         },
-         body: `contactId=${contactId}&newType=${newType}`,
-     })
-         .then(response => response.json())
-         .then(data => {
-             if (data.success) {
-                 console.log("Contact type updated successfully");
-             } else {
-                 console.error("Error updating contact type");
-             }
-         })
-         .catch(error => {
-             console.error("Error:", error);
-         });
+formData.append('contactId', contactId);
+// formData.append('newType', newType);
+console.log(formData.toString());
+
+
+fetch("database/updateContactType.php", {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+    },
+    body: formData.toString(),
+        })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            console.log("Contact type updated successfully");
+            alert("SUCCESSFULLY SWITCHED THE TYPE OF CONTACT WITH ID: " + id)
+
+        } else {
+            console.error("Error updating contact type");
+            alert("FAILED TO SWITCH THE TYPE OF CONTACT WITH ID: " + id)
+
+        }
+    })
+    .catch(error => {
+        console.error("Error:", error);
+        alert("ERROR SWITCHING THE TYPE OF CONTACT WITH ID: " + id)
+
+    });
+
 
 }
 
